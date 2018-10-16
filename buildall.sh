@@ -54,7 +54,7 @@ B="\e[1m" # Bold formatting
 # Asks user yes/no question
 # Usage: confirm [prompt] [y|n: default option]
 function confirm() {
-	if [ "$INTERACTIVE" -e "0" ]; then
+	if ! $(exit $INTERACTIVE); then
 		case "$2" in
 			[yY]) return 0 ;;
 			[nN]) return 1 ;;
