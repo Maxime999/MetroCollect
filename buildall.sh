@@ -163,6 +163,8 @@ mkdir -p $DEPS_PATH
 cd $DEPS_PATH
 
 if ! $(exit $USE_LOCAL); then
+	git submodule update --init
+
 	git clone https://github.com/boostorg/boost
 	cd boost
 	git checkout tags/$BOOST_VERSION_TAG
