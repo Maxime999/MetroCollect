@@ -26,6 +26,7 @@
 BOOST_VERSION_TAG="boost-1.68.0"
 GRPC_VERSION_TAG="v1.15.1"
 CPPNETLIB_VERSION_TAG="cpp-netlib-0.13.0-final"
+CPPNETLIB_VERSION_BRANCH="0.13-release"
 SPDLOG_VERSION_TAG="v1.1.0"
 NLOHMANN_JSON_VERSION_TAG="v3.3.0"
 
@@ -176,7 +177,8 @@ if ! $(exit $USE_LOCAL); then
 
 	git clone https://github.com/cpp-netlib/cpp-netlib
 	cd cpp-netlib
-	git checkout tags/$CPPNETLIB_VERSION_TAG
+#	git checkout tags/$CPPNETLIB_VERSION_TAG
+	git checkout $CPPNETLIB_VERSION_BRANCH
 	git submodule update --init
 	cd ..
 
