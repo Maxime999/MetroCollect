@@ -1,0 +1,27 @@
+---
+  version: 1
+  schedule:
+    type: "streaming"
+  max-failures: 10
+  workflow:
+    collect:
+      metrics:
+        /cfm/cpu/*: {}
+        /cfm/memory/*: {}
+        /cfm/network/*: {}
+        /cfm/ethtool/*: {}
+      config:
+        /cfm:
+          SendValues: false
+          SendStats: true
+          SamplingInterval: 100
+          ProcessingWindowLength: 10
+          ProcessingWindowSlidingFactor: 10
+          ConvertToUnitPerSecond: true
+          UnchangedMetricTimeout: 120
+          #MaxMetricsBuffer: 0
+          #MaxCollectDuration: 0
+      publish:
+        - plugin_name: "file"
+          config:
+            file: "/tmp/metrics.log"

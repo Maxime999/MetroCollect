@@ -1,0 +1,3 @@
+[submodule "third_party/snap-plugin-lib-cpp"]
+	path = third_party/snap-plugin-lib-cpp
+	url = https://github.com/Maxime999/snap-plugin-lib-cpp
