@@ -36,7 +36,7 @@ namespace SnapInterface {
 		bool sendStats = SnapStreamInterface::defaultSendStats;
 		std::chrono::milliseconds sampling = MetroCollect::MetricsController::defaultSamplingInterval;
 		size_t windowLength = MetroCollect::MetricsController::defaultProcessingWindowLength;
-		size_t windowSlide = MetroCollect::MetricsController::defaultProcessingWindowSlidingFactor;
+		size_t windowOverlap = MetroCollect::MetricsController::defaultProcessingWindowOverlap;
 		size_t unchangedTimeout = SnapStreamInterface::defaultUnchangedMetricTimeout;
 		bool convert = MetroCollect::MetricsController::defaultConvertToUnitsPerSecond;
 
@@ -49,10 +49,8 @@ namespace SnapInterface {
 			sampling = std::chrono::milliseconds(cfg.get_int(std::string(SnapStreamInterface::configKeySamplingInterval)));
 		if (cfg.has_int_key(std::string(SnapStreamInterface::configKeyProcessingWindowLength)))
 			windowLength = cfg.get_int(std::string(SnapStreamInterface::configKeyProcessingWindowLength));
-		if (cfg.has_int_key(std::string(SnapStreamInterface::configKeyProcessingWindowSlidingFactor)))
-			windowSlide = cfg.get_int(std::string(SnapStreamInterface::configKeyProcessingWindowSlidingFactor));
-		else
-			windowSlide = windowLength;
+		if (cfg.has_int_key(std::string(SnapStreamInterface::configKeyProcessingWindowOverlap)))
+			windowOverlap = cfg.get_int(std::string(SnapStreamInterface::configKeyProcessingWindowOverlap));
 
 		if (cfg.has_bool_key(std::string(SnapStreamInterface::configKeyConvertToUnitsPerSecond)))
 			convert = cfg.get_bool(std::string(SnapStreamInterface::configKeyConvertToUnitsPerSecond));
@@ -62,7 +60,7 @@ namespace SnapInterface {
 		this->metricsController_.setSendValues(sendValues);
 		this->metricsController_.setSendStats(sendStats);
 		this->metricsController_.setSamplingInterval(sampling);
-		this->metricsController_.setProcessingWindow(windowLength, windowSlide);
+		this->metricsController_.setProcessingWindow(windowLength, windowOverlap);
 		this->metricsController_.setConvertToUnitsPerSeconds(convert);
 		this->unchangedMetricsTimeout_ = unchangedTimeout;
 	}

@@ -16,7 +16,7 @@
           SendStats: true
           SamplingInterval: 100
           ProcessingWindowLength: 10
-          ProcessingWindowSlidingFactor: 10
+          ProcessingWindowOverlap: 0
           ConvertToUnitPerSecond: true
           UnchangedMetricTimeout: 120
           #MaxMetricsBuffer: 0

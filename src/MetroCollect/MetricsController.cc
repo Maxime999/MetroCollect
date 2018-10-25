@@ -38,7 +38,7 @@ namespace MetroCollect {
 		isCollecting_(false),
 		convertToUnitsPerSecond_(MetricsController::defaultConvertToUnitsPerSecond),
 		processingWindowLength_(MetricsController::defaultProcessingWindowLength),
-		processingWindowSlidingFactor_(MetricsController::defaultProcessingWindowSlidingFactor),
+		processingWindowOverlap_(MetricsController::defaultProcessingWindowOverlap),
 		currentMetrics_(std::make_unique<MetricsDataArray>(this->sourceInterests_)),
 		previousMetrics_(std::make_unique<MetricsDataArray>(this->sourceInterests_)),
 		metricsValues_(MetricsController::defaultProcessingWindowLength, MetricsDiffArray(this->sourceInterests_))
@@ -77,8 +77,8 @@ namespace MetroCollect {
 		return this->processingWindowLength_;
 	}
 
-	size_t MetricsController::processingWindowSlidingFactor() const noexcept {
-		return this->processingWindowSlidingFactor_;
+	size_t MetricsController::processingWindowOverlap() const noexcept {
+		return this->processingWindowOverlap_;
 	}
 
 	bool MetricsController::convertToUnitsPerSeconds() const noexcept {
@@ -150,7 +150,7 @@ namespace MetroCollect {
 			this->unitsPerSecondFactor_ = 1.0;
 	}
 
-	void MetricsController::setProcessingWindow(size_t length, size_t slidingFactor) noexcept {
+	void MetricsController::setProcessingWindow(size_t length, size_t overlap) noexcept {
 		if (isCollecting_)
 			return;
 
@@ -159,12 +159,10 @@ namespace MetroCollect {
 			this->metricsValues_.reset(length, MetricsDiffArray(this->sourceInterests_));
 		}
 
-		if (slidingFactor > length)
-			slidingFactor = length;
-		if (slidingFactor == 0)
-			slidingFactor = 1;
-		if (slidingFactor != this->processingWindowSlidingFactor_)
-			this->processingWindowSlidingFactor_ = slidingFactor;
+		if (overlap >= length)
+			overlap = length - 1;
+		if (overlap != this->processingWindowOverlap_)
+			this->processingWindowOverlap_ = overlap;
 	}
 
 	void MetricsController::setConvertToUnitsPerSeconds(bool convertToUnitsPerSecond) noexcept {
@@ -213,8 +211,8 @@ namespace MetroCollect {
 #endif
 					return;
 				}
-				this->metricsValues_.moveBegin(this->processingWindowSlidingFactor_);
-				processingWindowIndex -= this->processingWindowSlidingFactor_;
+				this->metricsValues_.moveBegin(this->processingWindowOverlap_);
+				processingWindowIndex = this->processingWindowOverlap_;
 
 				if (cachedSendStats)
 					this->resetIterativeStats();
@@ -318,7 +316,7 @@ namespace MetroCollect {
 				}
 			}
 
-			if (this->processingWindowSlidingFactor_ * 2 >= this->processingWindowLength_) {
+			if (this->processingWindowOverlap_ * 2 <= this->processingWindowLength_) {
 				for (auto& val : this->metricsStatsIntermediate_.sum.indexedValues()) {
 					val.value = 0;
 					for (size_t i = 0; i < this->metricsValues_.size(); i++)
@@ -333,12 +331,12 @@ namespace MetroCollect {
 			}
 			else {
 				for (auto& val : this->metricsStatsIntermediate_.sum.indexedValues()) {
-					for (long i = -1; i >= -static_cast<long>(this->processingWindowSlidingFactor_); i--)
+					for (long i = -1; i >= static_cast<long>(this->processingWindowOverlap_ - this->processingWindowLength_); i--)
 						val.value -= this->metricsValues_[i][val.index];
 				}
 
 				for (auto& val : this->metricsStatsIntermediate_.sumSquared.indexedValues()) {
-					for (long i = -1; i >= -static_cast<long>(this->processingWindowSlidingFactor_); i--)
+					for (long i = -1; i >= static_cast<long>(this->processingWindowOverlap_ - this->processingWindowLength_); i--)
 						val.value -= this->metricsValues_[i][val.index] * this->metricsValues_[i][val.index];
 				}
 			}

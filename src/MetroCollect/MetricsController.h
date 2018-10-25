@@ -46,7 +46,7 @@ namespace MetroCollect {
 			static constexpr std::chrono::milliseconds defaultSamplingInterval = 100ms;
 #endif
 			static constexpr size_t defaultProcessingWindowLength = 10;
-			static constexpr size_t defaultProcessingWindowSlidingFactor = 10;
+			static constexpr size_t defaultProcessingWindowOverlap = 0;
 			static constexpr bool defaultConvertToUnitsPerSecond = true;
 
 			struct MetricsStatsIntermediate {
@@ -109,7 +109,7 @@ namespace MetroCollect {
 			bool convertToUnitsPerSecond_;
 
 			size_t processingWindowLength_;
-			size_t processingWindowSlidingFactor_;
+			size_t processingWindowOverlap_;
 
 			std::unique_ptr<MetricsDataArray> currentMetrics_;
 			std::unique_ptr<MetricsDataArray> previousMetrics_;
@@ -135,14 +135,14 @@ namespace MetroCollect {
 			const std::vector<size_t>& requestedMetrics() const noexcept;
 			std::chrono::milliseconds samplingInterval() const noexcept;
 			size_t processingWindowLength() const noexcept;
-			size_t processingWindowSlidingFactor() const noexcept;
+			size_t processingWindowOverlap() const noexcept;
 			bool convertToUnitsPerSeconds() const noexcept;
 
 			void setSendValues(bool sendValues) noexcept;
 			void setSendStats(bool sendStats) noexcept;
 			void setRequestedMetrics(const MetricsArray<Statistics::Stats>& requestedMetrics) noexcept;
 			void setSamplingInterval(std::chrono::milliseconds interval) noexcept;
-			void setProcessingWindow(size_t length, size_t slidingFactor) noexcept;
+			void setProcessingWindow(size_t length, size_t overlap) noexcept;
 			void setConvertToUnitsPerSeconds(bool convertToUnitsPerSecond) noexcept;
 
 			void collectMetrics();

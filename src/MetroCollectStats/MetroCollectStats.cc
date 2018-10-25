@@ -97,7 +97,7 @@ struct MetroCollectStats : public MetroCollect::MetricsControllerDelegate {
 int main(int argc, char* argv[]) {
 	auto samplingInterval = MetroCollect::MetricsController::defaultSamplingInterval;
 	size_t windowLength = MetroCollect::MetricsController::defaultProcessingWindowLength;
-	size_t windowSlide = MetroCollect::MetricsController::defaultProcessingWindowSlidingFactor;
+	size_t windowOverlap = MetroCollect::MetricsController::defaultProcessingWindowOverlap;
 	MetroCollectStats d;
 
 	if (argc > 1)
@@ -105,9 +105,7 @@ int main(int argc, char* argv[]) {
 	if (argc > 2)
 		windowLength = std::atol(argv[2]);
 	if (argc > 3)
-		windowSlide = std::atol(argv[3]);
-	else
-		windowSlide = windowLength;
+		windowOverlap = std::atol(argv[3]);
 	if (argc > 4)
 		d.iterationCount = std::atol(argv[4]);
 	else
@@ -118,7 +116,7 @@ int main(int argc, char* argv[]) {
 	MetroCollect::MetricsController controller(d);
 	controller.setSendStats(true);
 	controller.setSamplingInterval(samplingInterval);
-	controller.setProcessingWindow(windowLength, windowSlide);
+	controller.setProcessingWindow(windowLength, windowOverlap);
 	controller.setRequestedMetrics(m);
 
 	controller.collectMetrics();
