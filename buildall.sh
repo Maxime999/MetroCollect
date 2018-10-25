@@ -189,7 +189,7 @@ if ! $(exit $USE_LOCAL); then
 	git checkout tags/$SPDLOG_VERSION_TAG
 	cd ..
 
-	wget --no-check-certificate https://github.com/nlohmann/json/releases/download/$NLOHMANN_JSON_VERSION_TAG/json.hpp
+	wget --no-check-certificate -O json.hpp https://github.com/nlohmann/json/releases/download/$NLOHMANN_JSON_VERSION_TAG/json.hpp
 fi
 
 
