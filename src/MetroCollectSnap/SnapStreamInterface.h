@@ -122,3 +122,6 @@ namespace SnapInterface {
 			bool metricsContollerShouldStopCollectingMetrics(const MetroCollect::MetricsController& metricsController) override final;
 	};
 }
+
+
+int main(int argc, char* argv[]);

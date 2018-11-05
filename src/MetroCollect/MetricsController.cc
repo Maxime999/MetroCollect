@@ -174,6 +174,8 @@ namespace MetroCollect {
 
 
 	void MetricsController::collectMetrics() {
+		if (this->isCollecting_)
+			return;
 #if GPERFTOOLS_CPU_PROFILE
 		ProfilerStart("/tmp/aa.prof");
 #endif
