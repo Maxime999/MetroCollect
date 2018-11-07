@@ -143,8 +143,14 @@ namespace MetroCollect::MetricsSource {
 
 		bool wasCapitalized = false;
 		for (size_t i = 0; i < ethtoolString.size(); i++) {
-			if (!std::isalnum(ethtoolString[i]) && ethtoolString[i] != '_')
-				ethtoolString[i] = '_';
+			if (!std::isalnum(ethtoolString[i]) && ethtoolString[i] != '_') {
+				if (i > 0 && ethtoolString[i - 1] != '_') {
+					ethtoolString[i] = '_';
+				} else {
+					ethtoolString.erase(i, 1);
+					i--;
+				}
+			}
 			else if (std::isupper(ethtoolString[i])) {
 				if (i > 0 && ethtoolString[i - 1] != '_' && std::islower(ethtoolString[i - 1]) && !wasCapitalized) {
 					ethtoolString.insert(i, "_");
@@ -156,14 +162,14 @@ namespace MetroCollect::MetricsSource {
 				wasCapitalized = false;
 		}
 		while (ethtoolString.back() == '_')
-			ethtoolString.erase(ethtoolString.size() - 1);
+			ethtoolString.erase(ethtoolString.size() - 1, 1);
 		while (ethtoolString.front() == '_')
-			ethtoolString.erase(0);
+			ethtoolString.erase(0, 1);
 
 		InterfaceInfo::NameAndIndex ret;
 		ret.name = std::move(ethtoolString);
 		if (!indexString.empty())
-			ret.index =std::move(indexString);
+			ret.index = std::move(indexString);
 		return ret;
 	}
 
