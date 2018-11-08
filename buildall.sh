@@ -249,10 +249,10 @@ echo -e "$B    Copying header libraries$N"
 echo
 
 cp -r ./spdlog/include/spdlog $DEPS_OUTPUT_PATH/include
-quit_if_error $? "nlohmann-json (cp)"
+quit_if_error $? "spdlog (cp)"
 
 cp ./json.hpp $DEPS_OUTPUT_PATH/include/json.hpp
-quit_if_error $? "spdlog (cp)"
+quit_if_error $? "nlohmann-json (cp)"
 
 
 ######################################

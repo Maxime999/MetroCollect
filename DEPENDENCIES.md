@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# Snap Plugin library's dependencies
+# Build dependencies
 
 *Instructions for MetroCollect 2.3.4*
 
