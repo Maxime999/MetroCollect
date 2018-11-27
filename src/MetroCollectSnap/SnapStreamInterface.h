@@ -35,25 +35,39 @@ using namespace std::literals;
 
 
 namespace SnapInterface {
+	/**
+	 * @brief Interface class between MetricsController and Snap's streaming-collector plugin class
+	 */
 	class SnapStreamInterface final : public Plugin::StreamCollectorInterface, public MetroCollect::MetricsControllerDelegate {
 		public:
-			static constexpr int appVersion = 2;
-			static constexpr std::string_view appName = "metrocollect"sv;
+			static constexpr int appVersion = 2;								//!< Snap plugin version
+			static constexpr std::string_view appName = "metrocollect"sv;		//!< Snap plugin name
 
+			/**
+			 * @brief Strcut to store Snap metric objects and metric data to make it faster to send them to Snap
+			 */
 			struct MetricsPackage {
+				/**
+				 * @brief Simple array of metrics with a timestamp
+				 */
 				struct TimedMetrics {
-					std::chrono::system_clock::time_point timestamp;
-					std::vector<MetroCollect::DiffValueType> values;
+					std::chrono::system_clock::time_point timestamp;			//!< Timestamp of the metrics
+					std::vector<MetroCollect::DiffValueType> values;			//!< Array of metrics
 				};
 
-				std::vector<Plugin::Metric> computedMetrics;
-				std::vector<Plugin::Metric*> metricsToSend;
-				std::unique_ptr<TimedMetrics> currentMetrics;
-				std::unique_ptr<TimedMetrics> nextMetrics;
-				std::vector<size_t> metricsTimeout;
-				std::vector<size_t*> metricsTimeoutPointer;
-				std::vector<bool> secondaryMetrics;
+				std::vector<Plugin::Metric> computedMetrics;					//!< Cache for Snap metrics
+				std::vector<Plugin::Metric*> metricsToSend;						//!< Array of pointers to Snap metrics to be sent
+				std::unique_ptr<TimedMetrics> currentMetrics;					//!< Earlier values that may be sent
+				std::unique_ptr<TimedMetrics> nextMetrics;						//!< Latest values kept to be sent on the next iteration
+				std::vector<size_t> metricsTimeout;								//!< Sub-sampling counters for constant metrics
+				std::vector<size_t*> metricsTimeoutPointer;						//!< Array to match metrics to their sub-sampling counter (one is shared for all statistics)
+				std::vector<bool> secondaryMetrics;								//!< Array to mark the most important metric stat (average)
 
+				/**
+				 * @brief Reinitializes the receiver and allocates space for metrics
+				 *
+				 * @param metricsCount The total number of metrics that can be sent
+				 */
 				void clear(size_t metricsCount) {
 					this->computedMetrics.clear();
 					this->metricsToSend.clear();
@@ -68,53 +82,116 @@ namespace SnapInterface {
 
 		protected:
 			static constexpr std::array appPrefix = {"cfm"sv/*, "metrocollect"sv*/};
-			static constexpr std::string_view configKeySendValues = "SendValues"sv;
-			static constexpr std::string_view configKeySendStats = "SendStats"sv;
-			static constexpr std::string_view configKeySamplingInterval = "SamplingInterval"sv;
-			static constexpr std::string_view configKeyProcessingWindowLength = "ProcessingWindowLength"sv;
-			static constexpr std::string_view configKeyProcessingWindowOverlap = "ProcessingWindowOverlap"sv;
-			static constexpr std::string_view configKeyConvertToUnitsPerSecond = "ConvertToUnitsPerSecond"sv;
-			static constexpr std::string_view configKeyUnchangedMetricTimeout = "UnchangedMetricTimeout"sv;
-			static constexpr std::string_view configKeyMaxCollectDuration = "MaxCollectDuration"sv;
-			static constexpr std::string_view configKeyMaxMetricsBuffer = "MaxMetricsBuffer"sv;
-			static constexpr std::array configKeysInt = {configKeySamplingInterval, configKeyProcessingWindowLength, configKeyProcessingWindowOverlap, configKeyUnchangedMetricTimeout, configKeyMaxCollectDuration, configKeyMaxMetricsBuffer};
-			static constexpr std::array configKeysBool = {configKeySendValues, configKeySendStats, configKeyConvertToUnitsPerSecond};
-			static constexpr bool defaultSendValues = false;
-			static constexpr bool defaultSendStats = true;
-			static constexpr size_t defaultUnchangedMetricTimeout = 300;
-			static constexpr std::chrono::seconds defaultMaxCollectDuration = 0s;
-			static constexpr size_t defaultMaxMetricsBuffer = 0;
-			static constexpr std::array<int, configKeysInt.size()> configValuesInt = {MetroCollect::MetricsController::defaultSamplingInterval.count(), MetroCollect::MetricsController::defaultProcessingWindowLength, MetroCollect::MetricsController::defaultProcessingWindowOverlap, SnapStreamInterface::defaultUnchangedMetricTimeout, SnapStreamInterface::defaultMaxCollectDuration.count(), SnapStreamInterface::defaultMaxMetricsBuffer};
-			static constexpr std::array<bool, configKeysBool.size()> configValuesBool = {defaultSendValues, defaultSendStats, MetroCollect::MetricsController::defaultConvertToUnitsPerSecond};
-			static constexpr std::string_view statNamespaceLastComponent = "value"sv;
-			static constexpr std::string_view statNamespaceDescription = "statistic"sv;
+			static constexpr std::string_view configKeySendValues = "SendValues"sv;									//!< Snap plugin configuration key
+			static constexpr std::string_view configKeySendStats = "SendStats"sv;									//!< Snap plugin configuration key
+			static constexpr std::string_view configKeySamplingInterval = "SamplingInterval"sv;						//!< Snap plugin configuration key
+			static constexpr std::string_view configKeyProcessingWindowLength = "ProcessingWindowLength"sv;			//!< Snap plugin configuration key
+			static constexpr std::string_view configKeyProcessingWindowOverlap = "ProcessingWindowOverlap"sv;		//!< Snap plugin configuration key
+			static constexpr std::string_view configKeyConvertToUnitsPerSecond = "ConvertToUnitsPerSecond"sv;		//!< Snap plugin configuration key
+			static constexpr std::string_view configKeyUnchangedMetricTimeout = "UnchangedMetricTimeout"sv;			//!< Snap plugin configuration key
+			static constexpr std::string_view configKeyMaxCollectDuration = "MaxCollectDuration"sv;					//!< Snap plugin configuration key
+			static constexpr std::string_view configKeyMaxMetricsBuffer = "MaxMetricsBuffer"sv;						//!< Snap plugin configuration key
+			static constexpr std::array configKeysInt = {configKeySamplingInterval, configKeyProcessingWindowLength, configKeyProcessingWindowOverlap, configKeyUnchangedMetricTimeout, configKeyMaxCollectDuration, configKeyMaxMetricsBuffer};		//!< Array of integer-valued configuration keys
+			static constexpr std::array configKeysBool = {configKeySendValues, configKeySendStats, configKeyConvertToUnitsPerSecond};		//!< Array of boolean-valued configuration keys
+			static constexpr bool defaultSendValues = false;														//!< Snap plugin configuration default value
+			static constexpr bool defaultSendStats = true;															//!< Snap plugin configuration default value
+			static constexpr size_t defaultUnchangedMetricTimeout = 300;											//!< Snap plugin configuration default value
+			static constexpr std::chrono::seconds defaultMaxCollectDuration = 0s;									//!< Snap plugin configuration default value
+			static constexpr size_t defaultMaxMetricsBuffer = 0;													//!< Snap plugin configuration default value
+			static constexpr std::array<int, configKeysInt.size()> configValuesInt = {MetroCollect::MetricsController::defaultSamplingInterval.count(), MetroCollect::MetricsController::defaultProcessingWindowLength, MetroCollect::MetricsController::defaultProcessingWindowOverlap, SnapStreamInterface::defaultUnchangedMetricTimeout, SnapStreamInterface::defaultMaxCollectDuration.count(), SnapStreamInterface::defaultMaxMetricsBuffer};		//!< Array of integer-valued configuration default values
+			static constexpr std::array<bool, configKeysBool.size()> configValuesBool = {defaultSendValues, defaultSendStats, MetroCollect::MetricsController::defaultConvertToUnitsPerSecond};		//!< Array of boolean-valued configuration default values
+			static constexpr std::string_view statNamespaceLastComponent = "value"sv;								//!< Snap metric name category
+			static constexpr std::string_view statNamespaceDescription = "statistic"sv;								//!< Snap metric name description
 
-			MetroCollect::MetricsController metricsController_;
+			MetroCollect::MetricsController metricsController_;														//!< MetricsController used to collect statistics
 
-			MetroCollect::MetricsArray<MetroCollect::Statistics::Stats> requestedMetrics_;
-			size_t unchangedMetricsTimeout_;
+			MetroCollect::MetricsArray<MetroCollect::Statistics::Stats> requestedMetrics_;							//!< Array of requested metrics
+			size_t unchangedMetricsTimeout_;																		//!< Sub-sampling period for constant metrics
 
-			MetricsPackage valuesPackage_;
-			MetricsPackage statsPackage_;
+			MetricsPackage valuesPackage_;																			//!< MetricsPackage for metrics from raw counters variations
+			MetricsPackage statsPackage_;																			//!< MetricsPackage for metrics from computed statistics
 
 
+			/**
+			 * @brief Configures the plugin accordingly, unspecified values are reset to default
+			 *
+			 * @param cfg configuration options to use
+			 */
 			void setConfig(const Plugin::Config& cfg);
 
+
+			/**
+			 * @brief Generate requestedMetrics array from list of Snap metrics
+			 *
+			 * @param metrics Snap metrics requested by the user
+			 */
 			void parseSnapMetrics(const std::vector<Plugin::Metric>& metrics);
 
+
+			/**
+			 * @brief Inserts plugin name prefix into Snap namespace
+			 *
+			 * @param ns Snap namespace to modify
+			 */
 			void insertAppPrefixToNamespace(std::vector<std::string>& ns);
+
+			/**
+			 * @brief Configures a MetricsPackage object according to requested metrics
+			 *
+			 * @param package package to configure
+			 * @param suffix suffix to add to all package's metrics names (generally a statistic name)
+			 * @param condition boolean function specifying whether a requested metric should be included, and whether it is a primary metric
+			 */
 			void createRequestedMetrics(MetricsPackage& package, std::string suffix, std::function<bool(MetroCollect::Statistics::Stats, bool*)> condition);
+
+			/**
+			 * @brief Initializes a MetricsPackage sub-sampling counters
+			 *
+			 * @param package
+			 */
 			void fillMetricsPackage(MetricsPackage& package);
 
+
+			/**
+			 * @brief Filters and sends metrics form a package to Snap
+			 *
+			 * @param package metrics to send
+			 * @param copyMetrics function used to copy new metrics into the package
+			 */
 			void sendMetrics(MetricsPackage& package, std::function<void(MetricsPackage::TimedMetrics&)> copyMetrics);
 
 		public:
+			/**
+			 * @brief Construct a new Snap Stream Interface object
+			 */
 			SnapStreamInterface();
 
+
+			/**
+			 * @brief Returns the plugin configuration keys and default values to Snap
+			 *
+			 * @return The plugin default configuration
+			 */
 	        const Plugin::ConfigPolicy get_config_policy() override final;
+
+			/**
+			 * @brief Returns all metrics that can be fetched by the plugin to Snap
+			 *
+			 * @param cfg incomming Snap configuration values
+			 * @return metrics that can be fetched
+			 */
      	 	std::vector<Plugin::Metric> get_metric_types(Plugin::Config cfg) override final;
+
+			/**
+			 * @brief Gets the user's requested metrics from Snap
+			 *
+			 * @param metsIn the user's requested metrics array
+			 */
 			void get_metrics_in(std::vector<Plugin::Metric> &metsIn) override final;
 
+			/**
+			 * @brief Stream metrics to Snap
+			 */
 			void stream_metrics() override final;
 
 			void metricsContollerCollectedMetricsValues(const MetroCollect::MetricsController& metricsController, const MetroCollect::MetricsDiffArray& metricsDiff, const MetroCollect::MetricsDataArray& previousMetrics, const MetroCollect::MetricsDataArray& currentMetrics) override final;
@@ -124,4 +201,7 @@ namespace SnapInterface {
 }
 
 
+/**
+ * @brief MetroCollect main function
+ */
 int main(int argc, char* argv[]);

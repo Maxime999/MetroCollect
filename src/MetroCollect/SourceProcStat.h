@@ -32,29 +32,32 @@ using namespace std::literals;
 
 
 namespace MetroCollect::MetricsSource {
+	/**
+	 * @brief Sources of CPU metrics extracted from the file /proc/stat
+	 */
 	class SourceProcStat : public SourceBase {
 		protected:
-			static constexpr std::string_view filePath = "/proc/stat"sv;
+			static constexpr std::string_view filePath = "/proc/stat"sv;					//!< CPU metrics file path
 
-			static constexpr std::string_view sourcePrefix = "cpu"sv;
-			static constexpr std::string_view fieldNameOtherPrefix = "other"sv;
-			static constexpr std::string_view fieldNameAllCoresPrefix = "all"sv;
-			static constexpr std::string_view fieldNameCorePrefix = "core"sv;
-			static constexpr std::string_view fieldNameCoreDescription = "cpuID"sv;
-			static constexpr std::string_view fieldNameCoreAll = "*"sv;
-			static constexpr std::string_view cpuField = "cpu"sv;
-			static constexpr size_t cpuFieldCount = 10;
-			static constexpr std::array<std::string_view, cpuFieldCount> cpuFieldNames = {"user"sv, "nice"sv, "system"sv, "idle"sv, "iowait"sv, "irq"sv, "softirq"sv, "steal"sv, "guest"sv, "guestNice"sv};
-			static constexpr std::string_view percentUnit = "%"sv;
-			static constexpr std::string_view defaultUnit = ""sv;
+			static constexpr std::string_view sourcePrefix = "cpu"sv;						//!< Metrics name source prefix
+			static constexpr std::string_view fieldNameOtherPrefix = "other"sv;				//!< Metrics name category
+			static constexpr std::string_view fieldNameAllCoresPrefix = "all"sv;			//!< Metrics name category
+			static constexpr std::string_view fieldNameCorePrefix = "core"sv;				//!< Metrics name category
+			static constexpr std::string_view fieldNameCoreDescription = "cpuID"sv;			//!< Metrics name category description
+			static constexpr std::string_view fieldNameCoreAll = "*"sv;						//!< Metrics name wildcard
+			static constexpr std::string_view cpuField = "cpu"sv;							//!< Metrics name category
+			static constexpr size_t cpuFieldCount = 10;										//!< Number of fields for each CPU
+			static constexpr std::array<std::string_view, cpuFieldCount> cpuFieldNames = {"user"sv, "nice"sv, "system"sv, "idle"sv, "iowait"sv, "irq"sv, "softirq"sv, "steal"sv, "guest"sv, "guestNice"sv};		//!< CPU states names
+			static constexpr std::string_view percentUnit = "%"sv;							//!< Metric unit
+			static constexpr std::string_view defaultUnit = ""sv;							//!< Metric unit
 
-			size_t cpuCount_;
-			std::vector<std::string> otherFieldNames_;
-			std::ifstream file_;
-			std::vector<char> buffer_;
+			size_t cpuCount_;									//!< Number of CPUs
+			std::vector<std::string> otherFieldNames_;			//!< Names of other CPU metrics
+			std::ifstream file_;								//!< File descriptor
+			std::vector<char> buffer_;							//!< Buffer to put file contents into
 
-			SourceProcStat();
-			void parseFields();
+			SourceProcStat();									//!< Private default constructor
+			void parseFields();									//!< File parser function
 
 		public:
 			/**

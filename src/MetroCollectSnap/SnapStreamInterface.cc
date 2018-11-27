@@ -222,8 +222,8 @@ namespace SnapInterface {
 
 		if (this->metricsController_.sendValues()) {
 			this->valuesPackage_.clear(this->metricsController_.requestedMetrics().size());
-			this->createRequestedMetrics(this->valuesPackage_, std::string(SnapStreamInterface::statNamespaceLastComponent), [&](MetroCollect::Statistics::Stats value, bool* isSecondarayMetric) {
-				*isSecondarayMetric = false;
+			this->createRequestedMetrics(this->valuesPackage_, std::string(SnapStreamInterface::statNamespaceLastComponent), [&](MetroCollect::Statistics::Stats value, bool* isSecondaryMetric) {
+				*isSecondaryMetric = false;
 				return value != 0;
 			});
 			this->fillMetricsPackage(this->valuesPackage_);
@@ -232,8 +232,8 @@ namespace SnapInterface {
 		if (this->metricsController_.sendStats()) {
 			this->statsPackage_.clear(this->metricsController_.requestedMetrics().size());
 			for (size_t statIndex = 0; statIndex < MetroCollect::Statistics::count; statIndex++) {
-				this->createRequestedMetrics(this->statsPackage_, std::string(MetroCollect::Statistics::names[statIndex]), [&](MetroCollect::Statistics::Stats value, bool* isSecondarayMetric) {
-					*isSecondarayMetric = (MetroCollect::Statistics::allStats[statIndex] != MetroCollect::Statistics::StatsAverage);
+				this->createRequestedMetrics(this->statsPackage_, std::string(MetroCollect::Statistics::names[statIndex]), [&](MetroCollect::Statistics::Stats value, bool* isSecondaryMetric) {
+					*isSecondaryMetric = (MetroCollect::Statistics::allStats[statIndex] != MetroCollect::Statistics::StatsAverage);
 					return value & MetroCollect::Statistics::allStats[statIndex];
 				});
 			}

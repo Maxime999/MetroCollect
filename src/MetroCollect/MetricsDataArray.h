@@ -24,11 +24,29 @@
 
 
 namespace MetroCollect {
+	/**
+	 * @brief Class to fetch metrics from the kernel and store them
+	 */
 	class MetricsDataArray : public MetricsArray<DataValueType> {
 		public:
+			/**
+			 * @brief Construct a new Metrics Data Array object
+			 */
 			MetricsDataArray() noexcept;
+
+			/**
+			 * @brief Construct a new Metrics Data Array object
+			 *
+			 * @param sourceInterests boolean arrays to store source interests
+			 */
 			explicit MetricsDataArray(MetricsSource::SourceInterests sourceInterests) noexcept;
 
+
+			/**
+			 * @brief Fetch new metric values from each source
+			 *
+			 * Metric values are stored directly into the underlying array
+			 */
 			void updateData();
 	};
 }

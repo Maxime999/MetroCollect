@@ -24,18 +24,51 @@
 
 
 namespace MetroCollect {
+	/**
+	 * @brief Class to compute and store metric values variations
+	 */
 	class MetricsDiffArray : public MetricsArray<DiffValueType> {
 		protected:
-			std::chrono::system_clock::time_point startTime_;
-			std::chrono::system_clock::time_point endTime_;
+			std::chrono::system_clock::time_point startTime_;		//!< Time of earlier metrics
+			std::chrono::system_clock::time_point endTime_;			//!< Time of latest metrics
 
 		public:
+			/**
+			 * @brief Construct a new Metrics Diff Array object
+			 */
 			MetricsDiffArray() noexcept;
+
+			/**
+			 * @brief Construct a new Metrics Diff Array object
+			 *
+			 * @param sourceInterests boolean arrays to store source interests
+			 */
 			explicit MetricsDiffArray(MetricsSource::SourceInterests sourceInterests) noexcept;
 
+
+			/**
+			 * @brief Get time of earlier metrics
+			 *
+			 * @return Time of earlier metrics
+			 */
 			const std::chrono::system_clock::time_point& startTime() const noexcept;
+
+
+			/**
+			 * @brief Get time of latest metrics
+			 *
+			 * @return Time of latest metrics
+			 */
 			const std::chrono::system_clock::time_point& endTime() const noexcept;
 
+
+			/**
+			 * @brief Compute and store the differences between two Metrics Data Arrays
+			 *
+			 * @param current latest metric values
+			 * @param previous earlier metric values
+			 * @param factor factor to convert metric differences to units per second
+			 */
 			void computeDiff(MetricsArray<DataValueType>& current, MetricsArray<DataValueType>& previous, double factor) noexcept;
 	};
 }

@@ -25,6 +25,12 @@
 #include <MetroCollect/MetricsController.h>
 
 
+/**
+ * @brief Print metric stats on screen
+ *
+ * @param names array of names of the metrics
+ * @param s Metrics Stats Arrays to print
+ */
 void printMetrics(const std::vector<std::pair<std::string, std::string>>& names, const MetroCollect::MetricsController::MetricsStats& s) {
 	std::cout << std::setw(54) << " ";
 	for (const auto& st : MetroCollect::Statistics::names)
@@ -40,6 +46,12 @@ void printMetrics(const std::vector<std::pair<std::string, std::string>>& names,
 	std::cout << std::endl << std::endl;
 }
 
+
+/**
+ * @brief Generate metric request to give to the MetricsController
+ *
+ * @return auto requested metrics list
+ */
 auto generateMetrics() {
 	auto interests = MetroCollect::MetricsSource::makeSourceInterests(true);
 	MetroCollect::MetricsArray<MetroCollect::Statistics::Stats> request{interests};
@@ -51,6 +63,14 @@ auto generateMetrics() {
 	return request;
 }
 
+
+/**
+ * @brief Get fields name of all metrics
+ *
+ * @tparam T Type of MetricsArray
+ * @param metricsArray MetricArray to get metric names from
+ * @return Array of metric names
+ */
 template<typename T>
 auto getAllFieldNames(const MetroCollect::MetricsArray<T>& metricsArray) {
 	std::vector<MetroCollect::MetricsSource::FieldInfo> fields(metricsArray.fieldCount());
@@ -70,9 +90,12 @@ auto getAllFieldNames(const MetroCollect::MetricsArray<T>& metricsArray) {
 }
 
 
+/**
+ * @brief Small struct to implement MetricsController delegate
+ */
 struct MetroCollectStats : public MetroCollect::MetricsControllerDelegate {
-	size_t iterationCount;
-	std::vector<std::pair<std::string, std::string>> names;
+	size_t iterationCount;		//!< Number of iterations remaining to be done
+	std::vector<std::pair<std::string, std::string>> names;		//!< Name of collected metrics
 
 	void metricsContollerCollectedMetricsValues(const MetroCollect::MetricsController& , const MetroCollect::MetricsDiffArray& , const MetroCollect::MetricsDataArray& , const MetroCollect::MetricsDataArray& ) override {
 
@@ -83,7 +106,6 @@ struct MetroCollectStats : public MetroCollect::MetricsControllerDelegate {
 		printMetrics(names, metricsStats);
 #else
 	void metricsContollerCollectedMetricsStats(const MetroCollect::MetricsController& , const MetroCollect::MetricsController::MetricsStats& ) override {
-
 #endif
 	}
 
@@ -93,6 +115,15 @@ struct MetroCollectStats : public MetroCollect::MetricsControllerDelegate {
 	}
 };
 
+
+
+/**
+ * @brief MetroCollectStats main function
+ *
+ * @param argc Argument count (expected: 4)
+ * @param argv Arguments values (sampling interval; window length; window overlap; iteration count)
+ * @return int Return code
+ */
 
 int main(int argc, char* argv[]) {
 	auto samplingInterval = MetroCollect::MetricsController::defaultSamplingInterval;

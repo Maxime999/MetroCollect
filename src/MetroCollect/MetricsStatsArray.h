@@ -27,36 +27,99 @@
 
 
 namespace MetroCollect {
+	/**
+	 * @brief Class to store metric statistics, and the indexes of those requested
+	 *
+	 * @tparam T Type of stored metrics on the container
+	 */
 	template<typename T>
 	class MetricsStatsArray : public MetricsArray<T> {
 		public:
+			/**
+			 * @brief Small struct to store an index of a value in a container and a reference to its value
+			 */
 			struct IndexedValue {
-				size_t index;
-				T& value;
+				size_t index;			//!< Index of the value in the container
+				T& value;				//!< Reference to the value
 
+				/**
+				 * @brief Construct a new Indexed Value object
+				 *
+				 * @param anIndex index of the value in the container
+				 * @param aValue reference to the value
+				 */
 				IndexedValue(size_t anIndex, T& aValue) : index(anIndex), value(aValue) { }
 			};
 
 		protected:
-			std::set<size_t> indexes_;
-			std::vector<IndexedValue> values_;
+			std::set<size_t> indexes_;								//!< Set of requested metrics
+			std::vector<IndexedValue> values_;						//!< Array of requested metrics
 
-			std::chrono::system_clock::time_point startTime_;
+			std::chrono::system_clock::time_point startTime_;		//!< Time of the earlier metric
 
 		public:
+			/**
+			 * @brief Construct a new Metrics Stats Array object
+			 */
 			MetricsStatsArray() noexcept;
 
+			/**
+			 * @brief Get time of earlier metrics
+			 *
+			 * @return Time of earlier metrics
+			 */
 			const std::chrono::system_clock::time_point& startTime() const noexcept;
+
+			/**
+			 * @brief Get time of latest metrics
+			 *
+			 * @return Time of latest metrics
+			 */
 			const std::chrono::system_clock::time_point& endTime() const noexcept;
 
+
+			/**
+			 * @brief Set the time of earlier metrics used to compute statistics
+			 *
+			 * @param startTime the time of earlier metrics
+			 */
 			void setStartTime(std::chrono::system_clock::time_point startTime) noexcept;
+
+			/**
+			 * @brief Set the time of latest metrics used to compute statistics
+			 *
+			 * @param endTime the time of latest metrics
+			 */
 			void setEndTime(std::chrono::system_clock::time_point endTime) noexcept;
 
+
+			/**
+			 * @brief Returns set of requested metrics
+			 *
+			 * @return The set of requested metrics
+			 */
 			const std::set<size_t>& indexes() const noexcept;
+
+			/**
+			 * @brief Set which indexes are requested
+			 *
+			 * @param indexes Set of requested metrics
+			 */
 			void setIndexes(std::set<size_t> indexes) noexcept;
 
+			/**
+			 * @brief Returns the number of requested metrics
+			 *
+			 * @return the number of requested metrics
+			 */
 			size_t indexCount() const noexcept;
 
+
+			/**
+			 * @brief Returns the requested metric indexes and values
+			 *
+			 * @return Array of requested metric indexes and values
+			 */
 			const std::vector<IndexedValue>& indexedValues() const noexcept;
 	};
 }

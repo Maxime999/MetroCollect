@@ -32,26 +32,29 @@ using namespace std::literals;
 
 
 namespace MetroCollect::MetricsSource {
+	/**
+	 * @brief Sources of network metrics extracted from the file /proc/net/dev
+	 */
 	class SourceProcNetDev : public SourceBase {
 		protected:
-			static constexpr std::string_view filePath = "/proc/1/net/dev"sv;
+			static constexpr std::string_view filePath = "/proc/1/net/dev"sv;						//!< Network metrics file path
 
-			static constexpr std::string_view sourcePrefix = "network"sv;
-			static constexpr std::string_view fieldNameInterfaceDescription = "interface"sv;
-			static constexpr std::string_view fieldRecieve = "rx"sv;
-			static constexpr std::string_view fieldTransmit = "tx"sv;
-			static constexpr std::string_view fieldNameAll = "*"sv;
-			static constexpr std::array fieldUnitsAssociation = { KeyUnit{"bytes"sv, "bytes"sv}, KeyUnit{"packets"sv, "packets"sv}, KeyUnit{"compressed"sv, "packets"sv}, KeyUnit{"multicast"sv, "packets"sv} };
-			static constexpr std::string_view defaultUnit = "errors"sv;
+			static constexpr std::string_view sourcePrefix = "network"sv;							//!< Metrics name source prefix
+			static constexpr std::string_view fieldNameInterfaceDescription = "interface"sv;		//!< Metrics name category description
+			static constexpr std::string_view fieldRecieve = "rx"sv;								//!< Metrics name category
+			static constexpr std::string_view fieldTransmit = "tx"sv;								//!< Metrics name category
+			static constexpr std::string_view fieldNameAll = "*"sv;									//!< Metrics name wildcard
+			static constexpr std::array fieldUnitsAssociation = { KeyUnit{"bytes"sv, "bytes"sv}, KeyUnit{"packets"sv, "packets"sv}, KeyUnit{"compressed"sv, "packets"sv}, KeyUnit{"multicast"sv, "packets"sv} };		//!< Metric units associations
+			static constexpr std::string_view defaultUnit = "errors"sv;								//!< Metric unit
 
-			std::ifstream file_;
-			std::vector<char> buffer_;
-			std::vector<std::string> interfaces_;
-			std::vector<std::string> rxFieldNames_;
-			std::vector<std::string> txFieldNames_;
+			std::ifstream file_;								//!< File descriptor
+			std::vector<char> buffer_;							//!< Buffer to put file contents into
+			std::vector<std::string> interfaces_;				//!< Network interfaces names
+			std::vector<std::string> rxFieldNames_;				//!< Reception metric names
+			std::vector<std::string> txFieldNames_;				//!< Transmission metric names
 
-			SourceProcNetDev();
-			void parseFields();
+			SourceProcNetDev();									//!< Private default constructor
+			void parseFields();									//!< File parser function
 
 		public:
 			/**

@@ -26,6 +26,17 @@
 #include <MetroCollect/MetricsController.h>
 
 
+/**
+ * @brief Print metrics on screen
+ *
+ * @tparam T Type of first MetricsArray
+ * @tparam S Type of second MetricsArray
+ * @tparam U Type of third MetricsArray
+ * @param names array of names of the metrics
+ * @param m1 First MetricsDataArray: earlier values
+ * @param m2 Second MetricsDataArray: latest values
+ * @param d Third MetricsDiffArray: differences
+ */
 template<typename T, typename S, typename U>
 void printMetricsValues(const std::vector<std::pair<std::string, std::string>>& names, const MetroCollect::MetricsArray<T>& m1, const MetroCollect::MetricsArray<S>& m2, const MetroCollect::MetricsArray<U>& d) {
 	std::cout << std::setw(54) << std::left << "" << std::setw(16) << "First value" << "\t" << std::setw(16) << "Second value" << "\t" << std::setw(16) << "Evolution" << "Unit" << std::endl;
@@ -34,6 +45,13 @@ void printMetricsValues(const std::vector<std::pair<std::string, std::string>>& 
 	std::cout << std::endl << std::endl;
 }
 
+
+/**
+ * @brief Print metric stats on screen
+ *
+ * @param names array of names of the metrics
+ * @param s Metrics Stats Arrays to print
+ */
 void printMetricsStats(const std::vector<std::pair<std::string, std::string>>& names, const MetroCollect::MetricsController::MetricsStats& s) {
 	std::cout << std::setw(54) << " ";
 	for (const auto& st : MetroCollect::Statistics::names)
@@ -49,6 +67,12 @@ void printMetricsStats(const std::vector<std::pair<std::string, std::string>>& n
 	std::cout << std::endl << std::endl;
 }
 
+
+/**
+ * @brief Generate metric request to give to the MetricsController
+ *
+ * @return auto requested metrics list
+ */
 auto generateMetrics() {
 	auto interests = MetroCollect::MetricsSource::makeSourceInterests(true);
 	MetroCollect::MetricsArray<MetroCollect::Statistics::Stats> request{interests};
@@ -60,6 +84,14 @@ auto generateMetrics() {
 	return request;
 }
 
+
+/**
+ * @brief Get fields name of all metrics
+ *
+ * @tparam T Type of MetricsArray
+ * @param metricsArray MetricArray to get metric names from
+ * @return Array of metric names
+ */
 template<typename T>
 auto getAllFieldNames(const MetroCollect::MetricsArray<T>& metricsArray) {
 	std::vector<MetroCollect::MetricsSource::FieldInfo> fields(metricsArray.fieldCount());
@@ -79,13 +111,22 @@ auto getAllFieldNames(const MetroCollect::MetricsArray<T>& metricsArray) {
 }
 
 
+/**
+ * @brief Small struct to implement MetricsController delegate
+ */
 struct MetroCollectFile : public MetroCollect::MetricsControllerDelegate {
-	size_t i = 0;
-	size_t iterationCount;
-	std::vector<std::pair<std::chrono::duration<double, std::milli>, std::vector<MetroCollect::DiffValueType>>> values;
-	std::vector<std::pair<std::string, std::string>> names;
-	std::chrono::time_point<std::chrono::system_clock> start;
+	size_t i = 0;													//!< Iteration index
+	size_t iterationCount;											//!< Number of iterations remaining to be done
+	std::vector<std::pair<std::chrono::duration<double, std::milli>, std::vector<MetroCollect::DiffValueType>>> values;		//!< Array of all collected metrics and their relative timestamps
+	std::vector<std::pair<std::string, std::string>> names;			//!< Name of collected metrics
+	std::chrono::time_point<std::chrono::system_clock> start;		//!< Start time of metric collection
 
+	/**
+	 * @brief Update members
+	 *
+	 * @param iterations sets the number of iterations
+	 * @param metricsNames sets the metric names
+	 */
 	void set(size_t iterations, std::vector<std::pair<std::string, std::string>> metricsNames) {
 		this->iterationCount = iterations;
 		this->names = metricsNames;
@@ -101,7 +142,6 @@ struct MetroCollectFile : public MetroCollect::MetricsControllerDelegate {
 	}
 
 	void metricsContollerCollectedMetricsStats(const MetroCollect::MetricsController& , const MetroCollect::MetricsController::MetricsStats& ) override {
-
 	}
 
 	bool metricsContollerShouldStopCollectingMetrics(const MetroCollect::MetricsController& ) override {
@@ -111,6 +151,14 @@ struct MetroCollectFile : public MetroCollect::MetricsControllerDelegate {
 };
 
 
+
+/**
+ * @brief MetroCollectFile main function
+ *
+ * @param argc Argument count (expected: 3)
+ * @param argv Arguments values (sampling interval; iteration count; file path to write to)
+ * @return int Return code
+ */
 int main(int argc, char* argv[]) {
 	auto samplingInterval = MetroCollect::MetricsController::defaultSamplingInterval;
 	size_t iterations = 10;

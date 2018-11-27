@@ -31,6 +31,17 @@
 #include <MetroCollect/MetricsController.h>
 
 
+/**
+ * @brief Print metrics on screen
+ *
+ * @tparam T Type of first MetricsArray
+ * @tparam S Type of second MetricsArray
+ * @tparam U Type of third MetricsArray
+ * @param names array of names of the metrics
+ * @param m1 First MetricsDataArray: earlier values
+ * @param m2 Second MetricsDataArray: latest values
+ * @param d Third MetricsDiffArray: differences
+ */
 template<typename T, typename S, typename U>
 void printMetrics(const std::vector<std::pair<std::string, std::string>>& names, const MetroCollect::MetricsArray<T>& m1, const MetroCollect::MetricsArray<S>& m2, const MetroCollect::MetricsArray<U>& d) {
 	std::cout << std::setw(54) << std::left << "" << std::setw(16) << "First value" << "\t" << std::setw(16) << "Second value" << "\t" << std::setw(16) << "Evolution" << "Unit" << std::endl;
@@ -39,6 +50,14 @@ void printMetrics(const std::vector<std::pair<std::string, std::string>>& names,
 	std::cout << std::endl << std::endl;
 }
 
+
+/**
+ * @brief Get fields name of all metrics
+ *
+ * @tparam T Type of MetricsArray
+ * @param metricsArray MetricArray to get metric names from
+ * @return Array of metric names
+ */
 template<typename T>
 auto getAllFieldNames(const MetroCollect::MetricsArray<T>& metricsArray) {
 	std::vector<MetroCollect::MetricsSource::FieldInfo> fields(metricsArray.fieldCount());
@@ -58,6 +77,14 @@ auto getAllFieldNames(const MetroCollect::MetricsArray<T>& metricsArray) {
 }
 
 
+
+/**
+ * @brief MetroCollectValues main function
+ *
+ * @param argc Argument count (expected: 2)
+ * @param argv Arguments values (sampling interval; iteration count)
+ * @return int Return code
+ */
 int main(int argc, char* argv[]) {
 	auto samplingInterval = MetroCollect::MetricsController::defaultSamplingInterval;
 	size_t iterationCount = 0;

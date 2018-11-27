@@ -88,7 +88,7 @@ namespace MetroCollect::MetricsSource {
 	 *
 	 * @tparam N Size of the key/unit association array
 	 * @param name field name to find a unit for
-	 * @param keyUnitAssociation array of keys and unit asociation. Keys are searched in the field name, the first match determines the key
+	 * @param keyUnitAssociation array of keys and unit association. Keys are searched in the field name, the first match determines the key
 	 * @param defaultUnit default unit to use if no key matches
 	 * @return the best match unit
 	 */

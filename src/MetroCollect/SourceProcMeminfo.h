@@ -32,20 +32,23 @@ using namespace std::literals;
 
 
 namespace MetroCollect::MetricsSource {
+	/**
+	 * @brief Sources of memory metrics extracted from the file /proc/meminfo
+	 */
 	class SourceProcMeminfo : public SourceBase {
 		protected:
-			static constexpr std::string_view filePath = "/proc/meminfo"sv;
+			static constexpr std::string_view filePath = "/proc/meminfo"sv;								//!< Memory metrics file path
 
-			static constexpr std::string_view sourcePrefix = "memory"sv;
-			static constexpr std::array fieldUnitsAssociation = { KeyUnit{"huge_pages_"sv, ""sv} };
-			static constexpr std::string_view defaultUnit = "bytes"sv;
+			static constexpr std::string_view sourcePrefix = "memory"sv;								//!< Metrics name source prefix
+			static constexpr std::array fieldUnitsAssociation = { KeyUnit{"huge_pages_"sv, ""sv} };		//!< Metric units associations
+			static constexpr std::string_view defaultUnit = "bytes"sv;									//!< Metric unit
 
-			std::ifstream file_;
-			std::vector<char> buffer_;
-			std::vector<std::string> fieldNames_;
+			std::ifstream file_;								//!< File descriptor
+			std::vector<char> buffer_;							//!< Buffer to put file contents into
+			std::vector<std::string> fieldNames_;				//!< Metrics names
 
-			SourceProcMeminfo();
-			void parseFields();
+			SourceProcMeminfo();								//!< Private default constructor
+			void parseFields();									//!< File parser function
 
 		public:
 			/**

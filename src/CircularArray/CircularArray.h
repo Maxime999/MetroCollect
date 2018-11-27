@@ -51,19 +51,19 @@ namespace CircularArray {
 
 
 			/**
-			 * @brief Construct a new Cicular Array object
+			 * @brief Construct a new Circular Array object
 			 */
 			CircularArray();
 
 			/**
-			 * @brief Construct a new Cicular Array object
+			 * @brief Construct a new Circular Array object
 			 *
 			 * @param n size of the container
 			 */
 			CircularArray(size_t n);
 
 			/**
-			 * @brief Construct a new Cicular Array object
+			 * @brief Construct a new Circular Array object
 			 *
 			 * @param n size of the container
 			 * @param value value to initialize each element with
@@ -79,7 +79,7 @@ namespace CircularArray {
 			size_t capacity() const noexcept;
 
 			/**
-			 * @brief Returns the number of elements curently used in the container
+			 * @brief Returns the number of elements currently used in the container
 			 *
 			 * @return The number of elements in the container
 			 */
@@ -185,7 +185,7 @@ namespace CircularArray {
 			/**
 			 * @brief Moves the beginning of the circular array
 			 *
-			 * @param indexes the number of indexes to add to the current beginnning
+			 * @param indexes the number of indexes to add to the current beginning
 			 */
 			void moveBegin(ptrdiff_t indexes) noexcept;
 

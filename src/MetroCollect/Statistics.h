@@ -84,7 +84,7 @@ namespace MetroCollect {
 			enum StatsDependency : uint64_t {
 				StatsDependencyMin			= StatsMin,										//!< Statistics which require to compute minimum
 				StatsDependencyMax			= StatsMax,										//!< Statistics which require to compute maximum
-				StatsDependencyStdDev		= StatsStdDev,									//!< Statistics which require to compute standard seviation
+				StatsDependencyStdDev		= StatsStdDev,									//!< Statistics which require to compute standard deviation
 				StatsDependencyAverage		= StatsAverage | StatsDependencyStdDev,			//!< Statistics which require to compute average
 				StatsDependencySum			= StatsDependencyAverage,						//!< Statistics which require to compute sum
 				StatsDependencySumSquared	= StatsDependencyStdDev,						//!< Statistics which require to compute sum of squares

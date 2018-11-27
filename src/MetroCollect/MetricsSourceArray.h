@@ -27,16 +27,30 @@
 
 
 namespace MetroCollect::MetricsSource {
+	/**
+	 * @brief Simple struct to hold references to each source singleton
+	 */
 	struct MetricsSourceArray {
-		SourceProcStat& procStat;
-		SourceProcMeminfo& procMemInfo;
-		SourceProcNetDev& procNetDev;
-		SourceEthtool& ethtool;
+		SourceProcStat& procStat;				//!< CPU metrics source (index: 1)
+		SourceProcMeminfo& procMemInfo;			//!< Memory metrics source (index: 2)
+		SourceProcNetDev& procNetDev;			//!< Network metrics source (index: 3)
+		SourceEthtool& ethtool;					//!< Ethtool metrics source (index: 4)
 
-		static constexpr size_t count = 4;
+		static constexpr size_t count = 4;		//!< Number of sources
 
+
+		/**
+		 * @brief Construct a new Metrics Source Array object
+		 */
 		MetricsSourceArray();
 
+
+		/**
+		 * @brief Execute a function for each source
+		 *
+		 * @tparam Function Function type, which must accept two arguments: implicitly convertible to the source type and an integer
+		 * @param func function to execute
+		 */
 		template<typename Function>
 		void forEach(Function func) {
 			func(procStat, 0);
@@ -45,6 +59,12 @@ namespace MetroCollect::MetricsSource {
 			func(ethtool, 3);
 		}
 
+		/**
+		 * @brief Execute a const function for each source
+		 *
+		 * @tparam Function Const function type, which must accept two arguments: implicitly convertible to the source type and an integer
+		 * @param func function to execute
+		 */
 		template<typename Function>
 		void forEach(Function func) const {
 			func(procStat, 0);
