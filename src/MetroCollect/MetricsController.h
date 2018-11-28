@@ -129,7 +129,7 @@ namespace MetroCollect {
 			};
 
 		protected:
-			MetricsControllerDelegate& delegate_;								//!< Delegate to tell when something happens
+			MetricsControllerDelegate& delegate_;								//!< Delegate to alert when something happens
 			MetricsSource::SourceInterests sourceInterests_;					//!< Boolean arrays to store source interests
 			std::vector<size_t> requestedMetrics_;								//!< Indexes of metrics requested to be collected
 			bool sendValues_;													//!< Whether to give values to the delegate
@@ -159,7 +159,7 @@ namespace MetroCollect {
 			/**
 			 * @brief Construct a new Metrics Controller object
 			 *
-			 * @param delegate The controller's delegate
+			 * @param delegate the controller's delegate
 			 */
 			MetricsController(MetricsControllerDelegate& delegate) noexcept;
 
@@ -270,7 +270,7 @@ namespace MetroCollect {
 	class MetricsControllerDelegate {
 		public:
 			/**
-			 * @brief Function called when the MetricsController has collected new values
+			 * @brief Function called every time the MetricsController has collected new values
 			 *
 			 * @param metricsController the calling MetricsController
 			 * @param metricsDiff computed metrics differences
@@ -280,7 +280,7 @@ namespace MetroCollect {
 			virtual void metricsContollerCollectedMetricsValues(const MetricsController& metricsController, const MetricsDiffArray& metricsDiff, const MetricsDataArray& previousMetrics, const MetricsDataArray& currentMetrics) = 0;
 
 			/**
-			 * @brief Function called when the MetricsController has computed statistics
+			 * @brief Function called every time the MetricsController has computed statistics
 			 *
 			 * @param metricsController the calling MetricsController
 			 * @param metricsStats computed statistics

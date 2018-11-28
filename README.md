@@ -1,3 +1,5 @@
+# MetroCollect
+
 <!--
 Copyright 2018 CFM (www.cfm.fr)
 
@@ -14,7 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# MetroCollect
+
 This project aims to collect and process various system metrics (such as CPU, memory and network usage) very efficitently, so that they can be retreived multiple times per second (for instance, every 50ms). It is designed to work with [Snap Telemetry](http://snap-telemetry.io).
 
 This repo is organized as the following:

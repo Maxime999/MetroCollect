@@ -81,7 +81,7 @@ namespace SnapInterface {
 			};
 
 		protected:
-			static constexpr std::array appPrefix = {"cfm"sv/*, "metrocollect"sv*/};
+			static constexpr std::array appPrefix = {"cfm"sv/*, "metrocollect"sv*/};								//!< Snap metric name prefix
 			static constexpr std::string_view configKeySendValues = "SendValues"sv;									//!< Snap plugin configuration key
 			static constexpr std::string_view configKeySendStats = "SendStats"sv;									//!< Snap plugin configuration key
 			static constexpr std::string_view configKeySamplingInterval = "SamplingInterval"sv;						//!< Snap plugin configuration key
@@ -113,7 +113,7 @@ namespace SnapInterface {
 
 
 			/**
-			 * @brief Configures the plugin accordingly, unspecified values are reset to default
+			 * @brief Configures the plugin and the controller accordingly, unspecified values are reset to default
 			 *
 			 * @param cfg configuration options to use
 			 */
@@ -194,6 +194,7 @@ namespace SnapInterface {
 			 */
 			void stream_metrics() override final;
 
+
 			void metricsContollerCollectedMetricsValues(const MetroCollect::MetricsController& metricsController, const MetroCollect::MetricsDiffArray& metricsDiff, const MetroCollect::MetricsDataArray& previousMetrics, const MetroCollect::MetricsDataArray& currentMetrics) override final;
 			void metricsContollerCollectedMetricsStats(const MetroCollect::MetricsController& metricsController, const MetroCollect::MetricsController::MetricsStats& metricsStats) override final;
 			bool metricsContollerShouldStopCollectingMetrics(const MetroCollect::MetricsController& metricsController) override final;
@@ -202,6 +203,6 @@ namespace SnapInterface {
 
 
 /**
- * @brief MetroCollect main function
+ * @brief MetroCollect's main function
  */
 int main(int argc, char* argv[]);
