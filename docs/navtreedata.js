@@ -24,8 +24,8 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "MetroCollect", "index.html", [
-    [ "MetroCollect Usage", "md__c_Users_mamosse_Development_MetroCollect_USAGE.html", null ],
-    [ "Build dependencies", "md__c_Users_mamosse_Development_MetroCollect_DEPENDENCIES.html", null ],
+    [ "MetroCollect Usage", "USAGE_8md.html", null ],
+    [ "Build dependencies", "DEPENDENCIES_8md.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

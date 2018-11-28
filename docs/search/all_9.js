@@ -7,7 +7,7 @@ var searchData=
   ['makesourceinterests',['makeSourceInterests',['../namespaceMetroCollect_1_1MetricsSource.html#a792dde2034208c4ab6e67668603b4bc2',1,'MetroCollect::MetricsSource']]],
   ['max',['max',['../structMetroCollect_1_1MetricsController_1_1MetricsStats.html#a6af880ef3857f4a64957b6a9ce3a249d',1,'MetroCollect::MetricsController::MetricsStats']]],
   ['maxindexes',['maxIndexes',['../structMetroCollect_1_1MetricsController_1_1MetricsStatsIntermediate.html#a7f31a8876e00cb3848051d710c8bce67',1,'MetroCollect::MetricsController::MetricsStatsIntermediate']]],
-  ['metrocollect_20usage',['MetroCollect Usage',['../md__c_Users_mamosse_Development_MetroCollect_USAGE.html',1,'']]],
+  ['metrocollect_20usage',['MetroCollect Usage',['../USAGE_8md.html',1,'']]],
   ['metricsarray',['MetricsArray',['../classMetroCollect_1_1MetricsArray.html',1,'MetroCollect::MetricsArray&lt; T &gt;'],['../classMetroCollect_1_1MetricsArray.html#a622b276e9f92cc2115bf9a23eec5d613',1,'MetroCollect::MetricsArray::MetricsArray() noexcept'],['../classMetroCollect_1_1MetricsArray.html#a406c7b8bf26d570883391da0f5e93822',1,'MetroCollect::MetricsArray::MetricsArray(MetricsSource::SourceInterests sourceInterests) noexcept'],['../classMetroCollect_1_1MetricsArray.html#a820ba9132163db394c18e9614580d62d',1,'MetroCollect::MetricsArray::MetricsArray(const MetricsArray &amp;other) noexcept']]],
   ['metricsarray_2ecc',['MetricsArray.cc',['../MetricsArray_8cc.html',1,'']]],
   ['metricsarray_2eh',['MetricsArray.h',['../MetricsArray_8h.html',1,'']]],

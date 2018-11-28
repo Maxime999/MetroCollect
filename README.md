@@ -26,6 +26,8 @@ This repo is organized as the following:
 
 Refer to [USAGE.md](USAGE.md) for more information on how to use these programs.
 
+MetroCollect's documentation is available on [GitHub pages](https://maxime999.github.io/MetroCollect/).
+
 
 ## Readme Contents
 - [MetroCollect](#metrocollect)
