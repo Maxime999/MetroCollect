@@ -2,10 +2,6 @@ language: cpp
 compiler: gcc
 dist: xenial
 
-cache:
-  directories:
-  - build
-
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update
@@ -16,4 +12,4 @@ install:
   - sudo update-alternatives --config gcc
 
 script:
-  - ./buildall.sh -i -d build
+  - ./buildall.sh -i
