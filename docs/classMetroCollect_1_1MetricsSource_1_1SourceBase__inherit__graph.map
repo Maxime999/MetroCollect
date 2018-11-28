@@ -1,0 +1,6 @@
+<map id="MetroCollect::MetricsSource::SourceBase" name="MetroCollect::MetricsSource::SourceBase">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html" title="Sources of network metrics extracted from Ethtool interface. " alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcMeminfo.html" title="Sources of memory metrics extracted from the file /proc/meminfo. " alt="" coords="240,71,427,112"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcNetDev.html" title="Sources of network metrics extracted from the file /proc/net/dev. " alt="" coords="240,136,427,177"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcStat.html" title="Sources of CPU metrics extracted from the file /proc/stat. " alt="" coords="240,201,427,243"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MetroCollect::MetricsSource::parseUint" name="MetroCollect::MetricsSource::parseUint">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcMeminfo.html#a76170c31500e5519621ece2d3efd8907" title="Fetch the latest metrics. " alt="" coords="240,5,451,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcNetDev.html#a5a1038e4613887936f8b821d21164468" title="Fetch the latest metrics. " alt="" coords="244,71,447,112"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcStat.html#a877a884a32b270523a94d24db8c1c781" title="Fetch the latest metrics. " alt="" coords="252,136,439,177"/>
+</map>

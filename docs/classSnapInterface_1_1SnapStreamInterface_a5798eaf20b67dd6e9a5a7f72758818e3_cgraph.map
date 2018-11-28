@@ -1,0 +1,6 @@
+<map id="SnapInterface::SnapStreamInterface::parseSnapMetrics" name="SnapInterface::SnapStreamInterface::parseSnapMetrics">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsArray.html#a1da56a16e2f46bdac2242d4462b7b09f" title="Returns the source interests. " alt="" coords="249,5,427,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1Statistics.html#ad247af8e592a2c2e723861b19b8ec138" title="Convert a stat name to a stat value. " alt="" coords="259,71,417,112"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1Statistics.html#a335eca29174a44c535d8399d75a05c6b" title="Returns the stats which are required to compute this stat. " alt="" coords="259,136,417,177"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsController.html#a2d217b252812a8979698f973904bc09c" title="Sets the list of request metrics. " alt="" coords="237,201,439,243"/>
+</map>

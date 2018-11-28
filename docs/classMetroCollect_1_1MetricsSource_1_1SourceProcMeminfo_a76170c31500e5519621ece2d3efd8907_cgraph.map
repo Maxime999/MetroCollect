@@ -1,0 +1,7 @@
+<map id="MetroCollect::MetricsSource::SourceProcMeminfo::fetchData" name="MetroCollect::MetricsSource::SourceProcMeminfo::fetchData">
+<area shape="rect" id="node2" href="$structMetroCollect_1_1MetricsSource_1_1Interests.html#a08c3397a94be902fd8be30a02f793945" title="Checks wether all bit are false. " alt="" coords="277,5,463,47"/>
+<area shape="rect" id="node3" href="$namespaceMetroCollect_1_1MetricsSource.html#a5979496c5008b45d6699ef965597cb88" title="Attempts to read file into buffer. " alt="" coords="277,71,463,112"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcMeminfo.html#a25afab7eae0b579d650a03531832c78a" title="Get the number of field the source has. " alt="" coords="264,136,476,177"/>
+<area shape="rect" id="node6" href="$namespaceMetroCollect_1_1MetricsSource.html#a3c91b20a2a23abce446c6d3bc83f1178" title="Fast and unsafe unsigned integer parser. " alt="" coords="277,201,463,243"/>
+<area shape="rect" id="node4" href="$namespaceMetroCollect_1_1MetricsSource.html#a78f6e79a4d990893a8e27d8529c6bf11" title="Attempts to open a file and set buffer size accordingly. " alt="" coords="524,71,711,112"/>
+</map>

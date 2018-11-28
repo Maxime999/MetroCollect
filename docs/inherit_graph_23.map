@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classMetroCollect_1_1MetricsControllerDelegate.html" title="Abstract delegate of MetricsController. " alt="" coords="5,49,207,90"/>
+<area shape="rect" id="node2" href="$structMetroCollectFile.html" title="Small struct to implement MetricsController delegate. " alt="" coords="287,5,403,32"/>
+<area shape="rect" id="node3" href="$structMetroCollectStats.html" title="Small struct to implement MetricsController delegate. " alt="" coords="282,56,409,83"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html" title="Interface class between MetricsController and Snap&#39;s streaming&#45;collector plugin class. " alt="" coords="255,107,436,149"/>
+</map>

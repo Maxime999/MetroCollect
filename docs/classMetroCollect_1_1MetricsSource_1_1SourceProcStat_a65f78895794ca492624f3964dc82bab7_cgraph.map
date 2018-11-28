@@ -1,0 +1,5 @@
+<map id="MetroCollect::MetricsSource::SourceProcStat::SourceProcStat" name="MetroCollect::MetricsSource::SourceProcStat::SourceProcStat">
+<area shape="rect" id="node2" href="$namespaceMetroCollect_1_1MetricsSource.html#a78f6e79a4d990893a8e27d8529c6bf11" title="Attempts to open a file and set buffer size accordingly. " alt="" coords="756,5,943,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcStat.html#a4c2dfbf3ff43c80e1e5ac7b26f9a1cad" title="File parser function. " alt="" coords="276,35,473,76"/>
+<area shape="rect" id="node4" href="$namespaceMetroCollect_1_1MetricsSource.html#a5979496c5008b45d6699ef965597cb88" title="Attempts to read file into buffer. " alt="" coords="521,35,708,76"/>
+</map>

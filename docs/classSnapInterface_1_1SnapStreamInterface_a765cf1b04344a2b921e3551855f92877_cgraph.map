@@ -1,0 +1,12 @@
+<map id="SnapInterface::SnapStreamInterface::stream_metrics" name="SnapInterface::SnapStreamInterface::stream_metrics">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsController.html#a24f69e1fc15524942dc3e41735ee2b00" title="Launch metric collection loop. " alt="" coords="235,217,436,259"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsController.html#afc1ab2690f059a573efa2e444d45a6b1" title="Fetch latest metrics from source and compute their variations. " alt="" coords="505,5,706,47"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsController.html#ae687fb14fa8d4d5098ba787acf6186b9" title="Update iterative stats with new MetricsDiffArray. " alt="" coords="505,217,706,259"/>
+<area shape="rect" id="node6" href="$classMetroCollect_1_1MetricsControllerDelegate.html#a66aadd658135030fd664d8248702633e" title="Function called every time the MetricsController has collected new values. " alt="" coords="491,137,720,193"/>
+<area shape="rect" id="node7" href="$classMetroCollect_1_1MetricsController.html#a9c877dbbebb591e184e694c999e5686b" title="Compute final stats at the end of processing window. " alt="" coords="505,444,706,485"/>
+<area shape="rect" id="node9" href="$classMetroCollect_1_1MetricsControllerDelegate.html#a44d2c250d8e93b4f8ede19e2ccaeffae" title="Function called every time the MetricsController has computed statistics. " alt="" coords="491,283,720,339"/>
+<area shape="rect" id="node10" href="$classMetroCollect_1_1MetricsControllerDelegate.html#a23386824e8405d36a20da522b3c63a6f" title="Function called after each iteration to ask the delegate whether the controller should stop collectin..." alt="" coords="484,363,727,419"/>
+<area shape="rect" id="node11" href="$classMetroCollect_1_1MetricsController.html#a7e364fd992216b4ae9e9ec32295b5313" title="Reset iterative stats to begin new processing window. " alt="" coords="505,71,706,112"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsStatsArray.html#a0925640a628e3dcda80dbf3c843b18bf" title="Returns the requested metric indexes and values. " alt="" coords="787,217,964,259"/>
+<area shape="rect" id="node8" href="$structMetroCollect_1_1MetricsController_1_1MetricsStats.html#adad7cd39a0cdb355a3780f0bdfe27761" title="Execute a function for each stats array. " alt="" coords="775,444,976,485"/>
+</map>

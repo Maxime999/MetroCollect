@@ -1,0 +1,5 @@
+<map id="MetroCollect::MetricsControllerDelegate" name="MetroCollect::MetricsControllerDelegate">
+<area shape="rect" id="node2" href="$structMetroCollectFile.html" title="Small struct to implement MetricsController delegate. " alt="" coords="5,102,121,129"/>
+<area shape="rect" id="node3" href="$structMetroCollectStats.html" title="Small struct to implement MetricsController delegate. " alt="" coords="145,102,272,129"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html" title="Interface class between MetricsController and Snap&#39;s streaming&#45;collector plugin class. " alt="" coords="297,95,478,136"/>
+</map>

@@ -1,0 +1,22 @@
+<map id="MetroCollect::MetricsStatsArray&lt; T &gt;" name="MetroCollect::MetricsStatsArray&lt; T &gt;">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsArray.html" title="Generic class to store and manage metrics. " alt="" coords="2357,539,2565,566"/>
+<area shape="rect" id="node4" href="$structMetroCollect_1_1MetricsSource_1_1MetricsSourceArray.html" title="Simple struct to hold references to each source singleton. " alt="" coords="1996,467,2183,508"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcNetDev.html" title="Sources of network metrics extracted from the file /proc/net/dev. " alt="" coords="1667,408,1853,449"/>
+<area shape="rect" id="node6" href="$classMetroCollect_1_1MetricsSource_1_1SourceBase.html" title="Singleton abstract class, base class of all metric sources classes. " alt="" coords="1298,560,1485,601"/>
+<area shape="rect" id="node18" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcMeminfo.html" title="Sources of memory metrics extracted from the file /proc/meminfo. " alt="" coords="1667,540,1853,581"/>
+<area shape="rect" id="node19" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcStat.html" title="Sources of CPU metrics extracted from the file /proc/stat. " alt="" coords="1667,164,1853,205"/>
+<area shape="rect" id="node21" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html" title="Sources of network metrics extracted from Ethtool interface. " alt="" coords="1667,712,1853,753"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="1344,318,1439,345"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="1023,311,1155,352"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="703,311,832,352"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="384,318,539,345"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="181,318,281,345"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="1337,674,1445,701"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="191,695,271,722"/>
+<area shape="rect" id="node23" href="$structMetroCollect_1_1MetricsSource_1_1SourceEthtool_1_1InterfaceInfo.html" title="Class to store the details and metrics names of a network interface. " alt="" coords="995,804,1184,845"/>
+<area shape="rect" id="node27" href="$structMetroCollect_1_1MetricsSource_1_1SourceEthtool_1_1InterfaceInfo_1_1NameAndIndex.html" title="Name of a metric. " alt="" coords="367,681,556,737"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="5,688,132,729"/>
+<area shape="rect" id="node24" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool_1_1EthtoolPointer.html" title="MetroCollect::MetricsSource\l::SourceEthtool::EthtoolPointer\l\&lt; struct ethtool_stats, uint64_t \&gt;" alt="" coords="661,862,873,918"/>
+<area shape="rect" id="node28" href="$structMetroCollect_1_1MetricsSource_1_1SourceEthtool_1_1Socketfd.html" title="Struct managing an Ethtool socket. " alt="" coords="1298,747,1485,788"/>
+<area shape="rect" id="node31" href="$structMetroCollect_1_1MetricsStatsArray_1_1IndexedValue.html" title="Small struct to store an index of a value in a container and a reference to its value. " alt="" coords="2001,641,2178,683"/>
+</map>

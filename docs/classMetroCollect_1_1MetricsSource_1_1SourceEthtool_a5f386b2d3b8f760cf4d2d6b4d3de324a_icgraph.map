@@ -1,0 +1,7 @@
+<map id="MetroCollect::MetricsSource::SourceEthtool::fieldCount" name="MetroCollect::MetricsSource::SourceEthtool::fieldCount">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html#ad1fc98d1b640fd7b1a564583336933fa" title="Gather details on interfaces. " alt="" coords="249,5,438,47"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html#a5f4599b151a4f9ff09c06cd9f5492964" title="Get details about a specific field. " alt="" coords="240,71,447,112"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html#ab696849dbf9a962c81283c1803fd5a0c" title="Get all fields details, field which share a common name should appear only once. " alt="" coords="249,136,437,177"/>
+<area shape="rect" id="node6" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html#a9b3129211d86d79818f9c6009615f8fb" title="Fetch the latest metrics. " alt="" coords="250,201,437,243"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html#ab2ca243e6c0e77bae64ec66a0e1e86b3" title="Private default constructor. " alt="" coords="495,5,697,47"/>
+</map>

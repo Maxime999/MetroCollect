@@ -1,0 +1,6 @@
+<map id="MetroCollect::MetricsController::setSendValues" name="MetroCollect::MetricsController::setSendValues">
+<area shape="rect" id="node2" href="$SnapStreamInterface_8h.html#a0ddf1224851353fc92bfbff6f499fa97" title="MetroCollect&#39;s main function. " alt="" coords="320,5,371,32"/>
+<area shape="rect" id="node3" href="$classSnapInterface_1_1SnapStreamInterface.html#a146fab7a5736c4f5a06bb1af1dd077c7" title="Configures the plugin and the controller accordingly, unspecified values are reset to default..." alt="" coords="255,57,436,98"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html#acc5e12240bdb2b8680c52188ac1604b3" title="Returns all metrics that can be fetched by the plugin to Snap. " alt="" coords="484,23,665,65"/>
+<area shape="rect" id="node5" href="$classSnapInterface_1_1SnapStreamInterface.html#aab05507b64843c11671c572cb92cf27c" title="Gets the user&#39;s requested metrics from Snap. " alt="" coords="484,89,665,130"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="MetroCollect::MetricsController::setProcessingWindow" name="MetroCollect::MetricsController::setProcessingWindow">
+<area shape="rect" id="node2" href="$MetroCollectFile_8cc.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="320,5,371,32"/>
+<area shape="rect" id="node3" href="$classSnapInterface_1_1SnapStreamInterface.html#a146fab7a5736c4f5a06bb1af1dd077c7" title="SnapInterface::SnapStream\lInterface::setConfig" alt="" coords="255,57,436,98"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html#acc5e12240bdb2b8680c52188ac1604b3" title="SnapInterface::SnapStream\lInterface::get_metric_types" alt="" coords="484,23,665,65"/>
+<area shape="rect" id="node5" href="$classSnapInterface_1_1SnapStreamInterface.html#aab05507b64843c11671c572cb92cf27c" title="SnapInterface::SnapStream\lInterface::get_metrics_in" alt="" coords="484,89,665,130"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MetroCollect::MetricsController::requestedMetrics" name="MetroCollect::MetricsController::requestedMetrics">
+<area shape="rect" id="node2" href="$classSnapInterface_1_1SnapStreamInterface.html#a92e9fb4beaa69ad4626eb4d4dd715540" title="Configures a MetricsPackage object according to requested metrics. " alt="" coords="258,5,478,47"/>
+<area shape="rect" id="node3" href="$classSnapInterface_1_1SnapStreamInterface.html#aab05507b64843c11671c572cb92cf27c" title="Gets the user&#39;s requested metrics from Snap. " alt="" coords="529,35,711,76"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html#af7a50889cfbcebedd39f41a320aea1ad" title="Function called every time the MetricsController has collected new values. " alt="" coords="255,122,481,178"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="SnapInterface::SnapStreamInterface::createRequestedMetrics" name="SnapInterface::SnapStreamInterface::createRequestedMetrics">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsArray.html#a88e7879a3902cb7fb0cacb1a9e17ed98" title="Returns the size of the underlying array. " alt="" coords="310,5,487,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsArray.html#a57ae4627445c423203a9ae9449343938" title="Get details about a specific metric field. " alt="" coords="310,71,487,112"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html#a09b043104f6c11eeccb554d69899b44c" title="Inserts plugin name prefix into Snap namespace. " alt="" coords="273,136,524,177"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsController.html#a6483e5544646445d9aaa37c6015138e2" title="Returns the list of request metrics. " alt="" coords="298,201,499,243"/>
+</map>

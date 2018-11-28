@@ -1,0 +1,4 @@
+<map id="MetroCollect::MetricsSource::SourceProcNetDev::allFieldsInfo" name="MetroCollect::MetricsSource::SourceProcNetDev::allFieldsInfo">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsSource_1_1SourceProcNetDev.html#ac404907c366e07f5332ae277440e0b1b" title="Get details about a specific field. " alt="" coords="268,5,503,47"/>
+<area shape="rect" id="node3" href="$namespaceMetroCollect_1_1MetricsSource.html#ad55cd95d03c011a996cdbee054214072" title="Tries to associate a field name with a unit, falling back on the default unit if none matches..." alt="" coords="551,5,737,47"/>
+</map>

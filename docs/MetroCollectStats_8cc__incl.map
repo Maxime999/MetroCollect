@@ -1,0 +1,20 @@
+<map id="MetroCollectStats/MetroCollectStats.cc" name="MetroCollectStats/MetroCollectStats.cc">
+<area shape="rect" id="node5" href="$MetricsController_8h.html" title="MetroCollect/MetricsController.h" alt="" coords="285,95,493,121"/>
+<area shape="rect" id="node9" href="$CircularArray_8h.html" title="CircularArray/CircularArray.h" alt="" coords="481,169,668,196"/>
+<area shape="rect" id="node11" href="$MetricsDataArray_8h.html" title="MetricsDataArray.h" alt="" coords="322,169,457,196"/>
+<area shape="rect" id="node32" href="$MetricsDiffArray_8h.html" title="MetricsDiffArray.h" alt="" coords="172,169,297,196"/>
+<area shape="rect" id="node33" href="$MetricsStatsArray_8h.html" title="MetricsStatsArray.h" alt="" coords="1364,169,1503,196"/>
+<area shape="rect" id="node10" href="$CircularArray_8cc.html" title="CircularArray.cc" alt="" coords="517,244,632,271"/>
+<area shape="rect" id="node12" href="$MetricsArray_8h.html" title="MetricsArray.h" alt="" coords="187,244,293,271"/>
+<area shape="rect" id="node15" href="$MetricsSourceArray_8h.html" title="MetricsSourceArray.h" alt="" coords="1041,319,1189,345"/>
+<area shape="rect" id="node16" href="$SourceProcStat_8h.html" title="SourceProcStat.h" alt="" coords="1211,393,1336,420"/>
+<area shape="rect" id="node27" href="$SourceProcMeminfo_8h.html" title="SourceProcMeminfo.h" alt="" coords="869,393,1019,420"/>
+<area shape="rect" id="node28" href="$SourceProcNetDev_8h.html" title="SourceProcNetDev.h" alt="" coords="1043,393,1186,420"/>
+<area shape="rect" id="node29" href="$SourceEthtool_8h.html" title="SourceEthtool.h" alt="" coords="1772,393,1887,420"/>
+<area shape="rect" id="node20" href="$Source_8h.html" title="Source.h" alt="" coords="1131,468,1205,495"/>
+<area shape="rect" id="node21" href="$MetricTypes_8h.html" title="MetricTypes.h" alt="" coords="773,543,877,569"/>
+<area shape="rect" id="node23" href="$SourceField_8h.html" title="SourceField.h" alt="" coords="1003,543,1106,569"/>
+<area shape="rect" id="node24" href="$SourceInterests_8h.html" title="SourceInterests.h" alt="" coords="1363,543,1487,569"/>
+<area shape="rect" id="node25" href="$SourceTools_8h.html" title="SourceTools.h" alt="" coords="1182,543,1287,569"/>
+<area shape="rect" id="node35" href="$Statistics_8h.html" title="Statistics.h" alt="" coords="1968,543,2056,569"/>
+</map>

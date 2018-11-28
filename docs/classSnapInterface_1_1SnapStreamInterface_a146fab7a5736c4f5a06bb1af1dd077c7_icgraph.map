@@ -1,0 +1,4 @@
+<map id="SnapInterface::SnapStreamInterface::setConfig" name="SnapInterface::SnapStreamInterface::setConfig">
+<area shape="rect" id="node2" href="$classSnapInterface_1_1SnapStreamInterface.html#acc5e12240bdb2b8680c52188ac1604b3" title="Returns all metrics that can be fetched by the plugin to Snap. " alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$classSnapInterface_1_1SnapStreamInterface.html#aab05507b64843c11671c572cb92cf27c" title="Gets the user&#39;s requested metrics from Snap. " alt="" coords="235,71,416,112"/>
+</map>

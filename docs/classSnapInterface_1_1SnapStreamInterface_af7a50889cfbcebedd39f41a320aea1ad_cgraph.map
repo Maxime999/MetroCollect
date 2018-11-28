@@ -1,0 +1,5 @@
+<map id="SnapInterface::SnapStreamInterface::metricsContollerCollectedMetricsValues" name="SnapInterface::SnapStreamInterface::metricsContollerCollectedMetricsValues">
+<area shape="rect" id="node2" href="$classSnapInterface_1_1SnapStreamInterface.html#a5b167e50ca50b39fbfdedc19a324db5c" title="Filters and sends metrics form a package to Snap. " alt="" coords="290,5,471,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsDiffArray.html#a3251cc77c6d04d5b348e486575f1ae26" title="Get time of latest metrics. " alt="" coords="299,71,463,112"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsController.html#a6483e5544646445d9aaa37c6015138e2" title="Returns the list of request metrics. " alt="" coords="280,136,481,177"/>
+</map>

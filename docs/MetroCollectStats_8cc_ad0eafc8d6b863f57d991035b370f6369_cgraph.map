@@ -1,0 +1,4 @@
+<map id="getAllFieldNames" name="getAllFieldNames">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsArray.html#a7c5048e901517713207496348e18c107" title="Returns the total number of available metrics. " alt="" coords="177,5,355,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsArray.html#a57ae4627445c423203a9ae9449343938" title="Get details about a specific metric field. " alt="" coords="177,71,355,112"/>
+</map>

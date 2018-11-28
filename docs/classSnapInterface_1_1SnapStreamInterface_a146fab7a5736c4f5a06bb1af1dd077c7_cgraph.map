@@ -1,0 +1,7 @@
+<map id="SnapInterface::SnapStreamInterface::setConfig" name="SnapInterface::SnapStreamInterface::setConfig">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsController.html#ace172fa1f3f717f5917af3d256c22663" title="Sets whether the controller alerts the delegate after collecting new values. " alt="" coords="237,5,439,47"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsController.html#a6e3b445f867df1c2f775aefa493f5d22" title="Sets whether the controller alerts the delegate after computing statistics. " alt="" coords="237,71,439,112"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsController.html#a0f95423dc7dbf4187bff233f7222d7c7" title="Sets the metrics sampling interval. " alt="" coords="237,136,439,177"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsController.html#a9532814e9abe42d5e5c053b1402c2c97" title="Sets the processing window parameters used to compute statistics. " alt="" coords="237,201,439,243"/>
+<area shape="rect" id="node6" href="$classMetroCollect_1_1MetricsController.html#a16114dd31b05f6a7b29ada77f6d85ad8" title="Sets whether to convert metric differences to units per second. " alt="" coords="235,267,441,308"/>
+</map>

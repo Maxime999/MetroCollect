@@ -1,0 +1,6 @@
+<map id="SnapInterface::SnapStreamInterface::insertAppPrefixToNamespace" name="SnapInterface::SnapStreamInterface::insertAppPrefixToNamespace">
+<area shape="rect" id="node2" href="$classSnapInterface_1_1SnapStreamInterface.html#a92e9fb4beaa69ad4626eb4d4dd715540" title="Configures a MetricsPackage object according to requested metrics. " alt="" coords="304,5,524,47"/>
+<area shape="rect" id="node4" href="$classSnapInterface_1_1SnapStreamInterface.html#acd260c2f6141a8eec275d5b289f95ba5" title="Returns the plugin configuration keys and default values to Snap. " alt="" coords="323,71,505,112"/>
+<area shape="rect" id="node5" href="$classSnapInterface_1_1SnapStreamInterface.html#acc5e12240bdb2b8680c52188ac1604b3" title="Returns all metrics that can be fetched by the plugin to Snap. " alt="" coords="323,136,505,177"/>
+<area shape="rect" id="node3" href="$classSnapInterface_1_1SnapStreamInterface.html#aab05507b64843c11671c572cb92cf27c" title="Gets the user&#39;s requested metrics from Snap. " alt="" coords="572,5,753,47"/>
+</map>

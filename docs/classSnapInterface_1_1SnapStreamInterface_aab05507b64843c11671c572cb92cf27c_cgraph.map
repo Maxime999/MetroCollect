@@ -1,0 +1,22 @@
+<map id="SnapInterface::SnapStreamInterface::get_metrics_in" name="SnapInterface::SnapStreamInterface::get_metrics_in">
+<area shape="rect" id="node2" href="$classSnapInterface_1_1SnapStreamInterface.html#a146fab7a5736c4f5a06bb1af1dd077c7" title="Configures the plugin and the controller accordingly, unspecified values are reset to default..." alt="" coords="254,169,435,211"/>
+<area shape="rect" id="node8" href="$classSnapInterface_1_1SnapStreamInterface.html#a5798eaf20b67dd6e9a5a7f72758818e3" title="Generate requestedMetrics array from list of Snap metrics. " alt="" coords="253,408,437,449"/>
+<area shape="rect" id="node13" href="$classMetroCollect_1_1MetricsController.html#ab07ede0387cc2bf0f4e3e9fced54f253" title="Returns whether the controller alerts the delegate after collecting new values. " alt="" coords="244,473,445,515"/>
+<area shape="rect" id="node14" href="$structSnapInterface_1_1SnapStreamInterface_1_1MetricsPackage.html#afae997076ec4e5b1973639932bc8e95c" title="Reinitializes the receiver and allocates space for metrics. " alt="" coords="240,539,449,580"/>
+<area shape="rect" id="node15" href="$classMetroCollect_1_1MetricsController.html#a6483e5544646445d9aaa37c6015138e2" title="Returns the list of request metrics. " alt="" coords="527,593,729,635"/>
+<area shape="rect" id="node16" href="$classSnapInterface_1_1SnapStreamInterface.html#a92e9fb4beaa69ad4626eb4d4dd715540" title="Configures a MetricsPackage object according to requested metrics. " alt="" coords="235,656,455,697"/>
+<area shape="rect" id="node20" href="$classSnapInterface_1_1SnapStreamInterface.html#a5c4d8019b77d363155ee10d897053d34" title="Initializes a MetricsPackage sub&#45;sampling counters. " alt="" coords="252,721,437,763"/>
+<area shape="rect" id="node21" href="$classMetroCollect_1_1MetricsController.html#a38688e0cd9917e5ca2d8e28510f3c0a8" title="Returns whether the controller alerts the delegate after computing statistics. " alt="" coords="244,787,445,828"/>
+<area shape="rect" id="node3" href="$classMetroCollect_1_1MetricsController.html#ace172fa1f3f717f5917af3d256c22663" title="Sets whether the controller alerts the delegate after collecting new values. " alt="" coords="527,5,729,47"/>
+<area shape="rect" id="node4" href="$classMetroCollect_1_1MetricsController.html#a6e3b445f867df1c2f775aefa493f5d22" title="Sets whether the controller alerts the delegate after computing statistics. " alt="" coords="527,71,729,112"/>
+<area shape="rect" id="node5" href="$classMetroCollect_1_1MetricsController.html#a0f95423dc7dbf4187bff233f7222d7c7" title="Sets the metrics sampling interval. " alt="" coords="527,136,729,177"/>
+<area shape="rect" id="node6" href="$classMetroCollect_1_1MetricsController.html#a9532814e9abe42d5e5c053b1402c2c97" title="Sets the processing window parameters used to compute statistics. " alt="" coords="527,201,729,243"/>
+<area shape="rect" id="node7" href="$classMetroCollect_1_1MetricsController.html#a16114dd31b05f6a7b29ada77f6d85ad8" title="Sets whether to convert metric differences to units per second. " alt="" coords="525,267,731,308"/>
+<area shape="rect" id="node9" href="$classMetroCollect_1_1MetricsArray.html#a1da56a16e2f46bdac2242d4462b7b09f" title="Returns the source interests. " alt="" coords="539,332,717,373"/>
+<area shape="rect" id="node10" href="$classMetroCollect_1_1Statistics.html#ad247af8e592a2c2e723861b19b8ec138" title="Convert a stat name to a stat value. " alt="" coords="549,397,707,439"/>
+<area shape="rect" id="node11" href="$classMetroCollect_1_1Statistics.html#a335eca29174a44c535d8399d75a05c6b" title="Returns the stats which are required to compute this stat. " alt="" coords="549,463,707,504"/>
+<area shape="rect" id="node12" href="$classMetroCollect_1_1MetricsController.html#a2d217b252812a8979698f973904bc09c" title="Sets the list of request metrics. " alt="" coords="527,528,729,569"/>
+<area shape="rect" id="node17" href="$classMetroCollect_1_1MetricsArray.html#a88e7879a3902cb7fb0cacb1a9e17ed98" title="Returns the size of the underlying array. " alt="" coords="539,659,717,700"/>
+<area shape="rect" id="node18" href="$classMetroCollect_1_1MetricsArray.html#a57ae4627445c423203a9ae9449343938" title="Get details about a specific metric field. " alt="" coords="539,724,717,765"/>
+<area shape="rect" id="node19" href="$classSnapInterface_1_1SnapStreamInterface.html#a09b043104f6c11eeccb554d69899b44c" title="Inserts plugin name prefix into Snap namespace. " alt="" coords="503,789,753,831"/>
+</map>

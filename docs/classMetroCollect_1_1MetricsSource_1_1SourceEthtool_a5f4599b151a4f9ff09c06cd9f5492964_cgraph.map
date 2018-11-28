@@ -1,0 +1,4 @@
+<map id="MetroCollect::MetricsSource::SourceEthtool::fieldInfoAtIndex" name="MetroCollect::MetricsSource::SourceEthtool::fieldInfoAtIndex">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool.html#a5f386b2d3b8f760cf4d2d6b4d3de324a" title="Get the number of field the source has. " alt="" coords="260,5,447,47"/>
+<area shape="rect" id="node3" href="$namespaceMetroCollect_1_1MetricsSource.html#ad55cd95d03c011a996cdbee054214072" title="Tries to associate a field name with a unit, falling back on the default unit if none matches..." alt="" coords="260,71,447,112"/>
+</map>

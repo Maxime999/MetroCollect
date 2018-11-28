@@ -1,0 +1,6 @@
+<map id="MetroCollect::MetricsSource::SourceEthtool::InterfaceInfo" name="MetroCollect::MetricsSource::SourceEthtool::InterfaceInfo">
+<area shape="rect" id="node2" href="$classMetroCollect_1_1MetricsSource_1_1SourceEthtool_1_1EthtoolPointer.html" title="MetroCollect::MetricsSource\l::SourceEthtool::EthtoolPointer\l\&lt; struct ethtool_stats, uint64_t \&gt;" alt="" coords="641,5,853,61"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="181,117,261,144"/>
+<area shape="rect" id="node7" href="$structMetroCollect_1_1MetricsSource_1_1SourceEthtool_1_1InterfaceInfo_1_1NameAndIndex.html" title="Name of a metric. " alt="" coords="347,136,536,192"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="5,110,132,151"/>
+</map>
