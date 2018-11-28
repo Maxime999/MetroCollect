@@ -63,7 +63,7 @@ target_link_libraries(MetroCollectSnap ${SNAP_LIB})
 target_link_libraries(MetroCollectSnap ${PROTOBUF_LIB} ${GRPCPP_LIB} ${GRPC_LIB})
 target_link_libraries(MetroCollectSnap ${CPPNETLIB_URI_LIB} ${CPPNETLIB_CLIENT_LIB} ${CPPNETLIB_SERVER_LIB})
 target_link_libraries(MetroCollectSnap ${BOOST_PROGRAM_OPTIONS_LIB} ${BOOST_SYSTEM_LIB} ${BOOST_FILESYSTEM_LIB})
-target_link_libraries(MetroCollectSnap rt z pthread ssl)
+target_link_libraries(MetroCollectSnap rt z pthread ssl crypto)
 
 # target_link_libraries(MetroCollectSnap snap grpc grpc++ protobuf
 #     cppnetlib-uri cppnetlib-client-connections cppnetlib-server-parsers

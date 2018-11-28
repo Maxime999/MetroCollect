@@ -1,5 +1,7 @@
 # MetroCollect
 
+[![Build Status](https://travis-ci.org/Maxime999/MetroCollect.svg?branch=master)](https://travis-ci.org/Maxime999/MetroCollect)
+
 <!--
 Copyright 2018 CFM (www.cfm.fr)
 
