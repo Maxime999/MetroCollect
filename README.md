@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 
-This project aims to collect and process various system metrics (such as CPU, memory and network usage) very efficitently, so that they can be retreived multiple times per second (for instance, every 50ms). It is designed to work with [Snap Telemetry](http://snap-telemetry.io).
+This project aims to collect and process various system metrics (such as CPU, memory and network usage) very efficiently, so that they can be retrieved multiple times per second (for instance, every 50ms). It is designed to work with [Snap Telemetry](http://snap-telemetry.io).
 
 This repo is organized as the following:
  * Two C++ libraries, `CircularArray` and `MetroCollect`
@@ -54,7 +54,7 @@ All OSs currently supported by plugin:
 ### System Requirements
 A C++ 17 compiler such as GCC 7 is required.
 
-The libraries and standalone interfaces do not have additional dependencies. The Snap plugin interface requires the [C++ Snap plugin library](https://github.com/Maxime999/snap-plugin-lib-cpp) and its dependencies, which should be installed on the system first. MetroCollect uses static liniking of those libraries for the executables to be portable.
+The libraries and standalone interfaces do not have additional dependencies. The Snap plugin interface requires the [C++ Snap plugin library](https://github.com/Maxime999/snap-plugin-lib-cpp) and its dependencies, which should be installed on the system first. MetroCollect uses static linking of those libraries for the programs to be portable.
 
 Refer to the DEPENDENCIES.md file for more information.
 

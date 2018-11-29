@@ -39,7 +39,7 @@ MetroCollect gathers metrics from different sources:
  * CPU metrics from `/proc/stat`
  * Memory metrics from `/proc/meminfo`
  * Network metrics from `/proc/net/dev`
- * Addtional network metrics with Ethtool
+ * Additional network metrics with Ethtool
 
 Those metrics are organized hierarchically. For instance, `/cfm/memory/cached` represents the amount of cached memory on the system, while `cfm/network/eth0/rx/bytes` represents the number of bytes received by `eth0`.
 
@@ -49,8 +49,8 @@ Most metric have a unit attached to it, and are expressed in units per second.
 CPU metrics are read from the `/proc/stat` file, you may refer to the relevant man page of your system to have a thorough description.
 
 As a summary, there are three types of CPU metrics:
- - for each CPU core, proportion of time spent in differents CPU states (user, system, nice, idle, etc.)
- - aggregated proportion of time spent in differents CPU states
+ - for each CPU core, proportion of time spent in different CPU states (user, system, nice, idle, etc.)
+ - aggregated proportion of time spent in different CPU states
  - other CPU metrics: number of interrupts, soft interrupts, spawned processed, running and blocked processes, etc.
 
 ### Memory metrics
@@ -62,7 +62,7 @@ Network metrics are read from the `/proc/net/dev` file, you may refer to the rel
 For each interface (either up or down), the number of bytes, packets and various errors are collected, for both reception ("rx") and transmission ("tx").
 
 ### Ethtool metrics
-These are the same metrics provided by the `ethtool -S $iface` for each network interface `$iface`. It provides very detailled information about each interface, but these information depend on the interface's driver. you may refer to the driver documentation for more details.
+These are the same metrics provided by the `ethtool -S $iface` for each network interface `$iface`. It provides very detailed information about each interface, but these information depend on the interface's driver. you may refer to the driver documentation for more details.
 
 MetroCollect supports all drivers supported by `ethtool`, and it is optimized for `ixgbe`, `igb` and `i40e`.
 
@@ -99,11 +99,11 @@ This program collects all available metrics, compute statistics on a moving wind
 
 MetroCollectValues can take up to **four arguments**:
 - the sampling interval in milliseconds, that is the duration to wait between two readings of kernel values. Default is 100 milliseconds
-- the length of the moving window in number of samples. Default is 10 (statisctics are computed every 10 samples)
+- the length of the moving window in number of samples. Default is 10 (statistics are computed every 10 samples)
 - the overlap of the moving window in number of samples, it must be less than the length of the window. Default is 0 (no overlap)
 - how many times to report metrics. Default is 0, which means unlimited time
 
-By default, statsics are thus computed and printed every 1 second.
+By default, statistics are thus computed and printed every 1 second.
 
 For example, `./MetroCollectStats 50 5 0 4` will read kernel values every 50 milliseconds, and compute and print stats every 5 samples (that is every 250 milliseconds), and it will do so 4 times. The program will thus run for 1 seconds.
 
@@ -157,7 +157,7 @@ The parameters are (default values are given [above](#configuration)):
  - `ProcessingWindowLength` (type int): moving window length (in number of samples). It is used to compute statistics
  - `ProcessingWindowOverlap` (type int): moving window overlap (in number of samples), it must be less than the length of the window. It is used to compute statistics
  - `ConvertToUnitPerSecond` (type boolean): wether or not to convert values in units per second if relevant (if you prefer the number of bytes sent per second instead of bytes sent per 100 milliseconds)
- - `UnchangedMetricTimeout` (type int): by default, for performance reasons, constant metrics are downsampled and thus not sent everytime to Snap. If the value changes it is sent immediatly. This parameter is the downsample factor: how many null variations to ignore before sending the value to Snap again. If it is 0, downsample will not take place, if it is -1 constant values will never be sent
+ - `UnchangedMetricTimeout` (type int): by default, for performance reasons, constant metrics are downsampled and thus not sent everytime to Snap. If the value changes it is sent immediately. This parameter is the downsample factor: how many null variations to ignore before sending the value to Snap again. If it is 0, downsample will not take place, if it is -1 constant values will never be sent
  - `MaxMetricsBuffer` (type int): maximum number of metrics to send to Snap at once
  - `MaxCollectDuration` (type int): maximum waiting time (in seconds) before sending metrics to Snap
 
@@ -167,7 +167,7 @@ By default, values will be read from the kernel every 100 milliseconds, compute 
 ### Metrics
 Collected metrics are described [above](#metrics).
 
-For each metric, you can select which statistics you are interested in (shown below for the metric of aggegated CPU proportion of time spent in user mode, **note the use of wildcards**):
+For each metric, you can select which statistics you are interested in (shown below for the metric of aggregated CPU proportion of time spent in user mode, **note the use of wildcards**):
 ```
 /cfm/cpu/all/user/min/*: {}
 /cfm/cpu/all/user/max/*: {}

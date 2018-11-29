@@ -68,7 +68,7 @@ target_link_libraries(MetroCollectSnap rt z pthread ssl crypto)
 # target_link_libraries(MetroCollectSnap snap grpc grpc++ protobuf
 #     cppnetlib-uri cppnetlib-client-connections cppnetlib-server-parsers
 #     boost_program_options boost_system boost_filesystem
-#     z pthread )
+#     z pthread ssl crypto)
 
 install(TARGETS MetroCollectSnap
 	DESTINATION bin)

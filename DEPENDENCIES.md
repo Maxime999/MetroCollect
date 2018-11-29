@@ -57,5 +57,5 @@ In addition to Snap dependencies, gRPC also has three mandatory dependencies (am
 Protobuf and BoringSSL should be unzipped to MetroCollect's `third_party/grpc/third_party/` directory, and c-ares in `third_party/grpc/third_party/cares/`.
 
 
-## Buidling
+## Building
 When everything is downloaded and unzipped in the right directories, you can go to MetroCollect's root folder and execute `./buildall.sh`. This will build all dependencies in a local directory, and after some time MetroCollect will be available in the `output/` directory.
