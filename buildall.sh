@@ -144,7 +144,7 @@ if $(exit $INTERACTIVE); then
 	echo "   - pkg-config"
 	echo "   - libtool"
 	echo "   - cmake"
-	echo "   - a C++17 compiler (such as GCC 7.2 from the Red Hat Developer Toolset 7)"
+	echo "   - a C++17 compiler (such as GCC 7 or later)"
 	echo "   - optionally doxygen (for documentation)"
 	if ! confirm "Is everything set-up correctly?" y; then
 		echo "Please install these dependencies first."
@@ -153,7 +153,9 @@ if $(exit $INTERACTIVE); then
 	echo
 fi
 
-source /opt/rh/devtoolset-7/enable
+if [ -f /opt/rh/devtoolset-7/enable ]; then
+	source /opt/rh/devtoolset-7/enable
+fi
 
 
 ###########################################
@@ -241,7 +243,7 @@ echo
 
 mkdir -p cpp-netlib-build
 cd cpp-netlib-build
-cmake -DCPP-NETLIB_BUILD_TESTS=OFF -DCPP-NETLIB_BUILD_EXAMPLES=OFF -DCMAKE_INSTALL_PREFIX=$DEPS_OUTPUT_PATH ../cpp-netlib
+cmake -DCMAKE_BUILD_TYPE=Release -DCPP-NETLIB_BUILD_TESTS=OFF -DCPP-NETLIB_BUILD_EXAMPLES=OFF -DCMAKE_INSTALL_PREFIX=$DEPS_OUTPUT_PATH ../cpp-netlib
 quit_if_error $? "cpp-netlib (cmake)"
 make $MAKE_ARGS
 quit_if_error $? "cpp-netlib (make)"
